@@ -5,7 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import GoLogin from './components/Login/GoLogin';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Main from './components/Main/Main';
+// import Main from './components/Main/Main';
 import { Container, Row, Col } from 'react-bootstrap';
 import State from './components/State/State';
 import DetailState from './components/State/DetailState';
@@ -19,145 +19,52 @@ import Map from './components/Map/Map';
 import { locations } from './components/Map/Locates';
 import Infomation from './components/Map/Infomation';
 import { useState } from 'react';
+import MainPage from './components/Main/MainPage';
 
 function App() {
   const [place, setPlace] = useState("기본")
   
   return (
     <BrowserRouter>
-      <Container fluid>
-        <Row>
-          <Col sm={10}>
-            <Header></Header>
-          </Col>
-
-          <Col sm={2}>
-            <State></State>
-          </Col>
-        </Row>
-        <br></br><br></br><br></br>
+      <div className='main-header'>
+        <div className='header'>
+          <Header />
+        </div>
+        <div className='state'>
+          <State />
+        </div>
+      </div>
         <Switch>
           <Route exact path='/'>
-            <Row>
-              <Col>
-                1of1
-                {/* ds */}
-              </Col>
-              <Col>
-                <Main></Main>
-              </Col>
-              <Col>
-                1of1
-              </Col>
-            </Row>
+            <MainPage></MainPage>
           </Route>
           <Route path="/login">
-            <Row>
-              <Col>
-                1of1
-              </Col>
-              <Col>
-                <GoLogin></GoLogin>
-              </Col>
-              <Col>
-                1of1
-              </Col>
-            </Row>
+            <GoLogin></GoLogin>
           </Route>
           <Route path="/addLogin">
-            <Row>
-              <Col>
-                1of1
-              </Col>
-              <Col>
-                <AddLogin></AddLogin>
-              </Col>
-              <Col>
-                1of1
-              </Col>
-            </Row>
+              <AddLogin></AddLogin>
           </Route>
           <Route path="/detailState">
-            <Row>
-              <Col>
-                1of2
-              </Col>
-              <Col>
                 <DetailState></DetailState>
-              </Col>
-              <Col>
-                1of1
-              </Col>
-            </Row>
           </Route>
           <Route path="/findLogin">
-            <Row>
-              <Col>
-                1of2
-              </Col>
-              <Col>
                 <FindLogin></FindLogin>
-              </Col>
-              <Col>
-                1of1
-              </Col>
-            </Row>
           </Route>
 
           <Route path="/board">
-            <Row>
-              <Col>
-                1of2
-              </Col>
-              <Col>
                 <Board></Board>
-              </Col>
-              <Col>
-                1of1
-              </Col>
-            </Row>
           </Route>
 
           <Route path="/boardDetail">
-            <Row>
-              <Col>
-                1of2
-              </Col>
-              <Col>
-                <BoardDetail></BoardDetail>
-              </Col>
-              <Col>
-                1of1
-              </Col>
-            </Row>
+              <BoardDetail></BoardDetail>
           </Route>
 
           <Route path="/addBoard">
-            <Row>
-              <Col>
-                1of2
-              </Col>
-              <Col>
                 <AddBoard></AddBoard>
-              </Col>
-              <Col>
-                1of1
-              </Col>
-            </Row>
           </Route>
 
           <Route path="/myBoard">
-            <Row>
-              <Col>
-                1of2
-              </Col>
-              <Col>
                 <MyBoard></MyBoard>
-              </Col>
-              <Col>
-                1of1
-              </Col>
-            </Row>
           </Route>
 
           <Route path="/map">
@@ -175,7 +82,6 @@ function App() {
           </Route>
 
         </Switch>
-<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
         <Row>
           <Col>
             1of1
@@ -205,7 +111,6 @@ function App() {
         <div className='Foot'>
           <Footer></Footer>
         </div> */}
-      </Container>
 
 
     </BrowserRouter>

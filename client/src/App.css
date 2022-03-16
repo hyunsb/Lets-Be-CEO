@@ -1,6 +1,29 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 .App {
   text-align: center;
 }
+
+.main {
+  padding: 0;
+}
+
+.main-header{
+  display: flex;
+}
+
+.header {
+  flex : 9;
+}
+
+.state {
+  flex : 1;
+}
+
 .Head{
   margin: auto;
   width: 100%;
