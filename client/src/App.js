@@ -25,95 +25,97 @@ function App() {
   const [place, setPlace] = useState("기본")
   
   return (
-    <BrowserRouter>
-      <div className='main-header'>
-        <div className='header'>
-          <Header />
+    <div className='body'>
+      <BrowserRouter>
+        <div className='main-header'>
+          <div className='header'>
+            <Header />
+          </div>
+          <div className='state'>
+            <State />
+          </div>
         </div>
-        <div className='state'>
-          <State />
-        </div>
-      </div>
-        <Switch>
-          <Route exact path='/'>
-            <MainPage></MainPage>
-          </Route>
-          <Route path="/login">
-            <GoLogin></GoLogin>
-          </Route>
-          <Route path="/addLogin">
-              <AddLogin></AddLogin>
-          </Route>
-          <Route path="/detailState">
-                <DetailState></DetailState>
-          </Route>
-          <Route path="/findLogin">
-                <FindLogin></FindLogin>
-          </Route>
+          <Switch>
+            <Route exact path='/'>
+              <MainPage></MainPage>
+            </Route>
+            <Route path="/login">
+              <GoLogin></GoLogin>
+            </Route>
+            <Route path="/addLogin">
+                <AddLogin></AddLogin>
+            </Route>
+            <Route path="/detailState">
+                  <DetailState></DetailState>
+            </Route>
+            <Route path="/findLogin">
+                  <FindLogin></FindLogin>
+            </Route>
 
-          <Route path="/board">
-                <Board></Board>
-          </Route>
+            <Route path="/board">
+                  <Board></Board>
+            </Route>
 
-          <Route path="/boardDetail">
-              <BoardDetail></BoardDetail>
-          </Route>
+            <Route path="/boardDetail">
+                <BoardDetail></BoardDetail>
+            </Route>
 
-          <Route path="/addBoard">
-                <AddBoard></AddBoard>
-          </Route>
+            <Route path="/addBoard">
+                  <AddBoard></AddBoard>
+            </Route>
 
-          <Route path="/myBoard">
-                <MyBoard></MyBoard>
-          </Route>
+            <Route path="/myBoard">
+                  <MyBoard></MyBoard>
+            </Route>
 
-          <Route path="/map">
-            <Row>
-              <Col>
-                <Infomation place={place}></Infomation>
-              </Col>
-              <Col>
-                <Map location={locations} place={place} setPlace={setPlace}></Map>
-              </Col>
-              <Col>
-                1of1
-              </Col>
-            </Row>
-          </Route>
+            <Route path="/map">
+              <Row>
+                <Col>
+                  <Infomation place={place}></Infomation>
+                </Col>
+                <Col>
+                  <Map location={locations} place={place} setPlace={setPlace}></Map>
+                </Col>
+                <Col>
+                  1of1
+                </Col>
+              </Row>
+            </Route>
 
-        </Switch>
-        <Row>
-          <Col>
-            1of1
-          </Col>
-          <Col>
+          </Switch>
+          <Row>
+            <Col>
+              1of1
+            </Col>
+            <Col>
+              <Footer></Footer>
+            </Col>
+            <Col>
+              1of1
+            </Col>
+          </Row>
+          {/* <div className='Head'>
+            <Header></Header>
+          </div>
+          <Switch>
+            <>
+              <div className='Body'>
+                <Route exact path="/">
+                  <Main></Main>
+                </Route>
+                <Route path="/login">
+                  <GoLogin></GoLogin>
+                </Route>
+              </div>
+            </>
+          </Switch>
+          <div className='Foot'>
             <Footer></Footer>
-          </Col>
-          <Col>
-            1of1
-          </Col>
-        </Row>
-        {/* <div className='Head'>
-          <Header></Header>
-        </div>
-        <Switch>
-          <>
-            <div className='Body'>
-              <Route exact path="/">
-                <Main></Main>
-              </Route>
-              <Route path="/login">
-                <GoLogin></GoLogin>
-              </Route>
-            </div>
-          </>
-        </Switch>
-        <div className='Foot'>
-          <Footer></Footer>
-        </div> */}
+          </div> */}
 
 
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
 
   );
 }
