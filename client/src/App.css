@@ -85,11 +85,15 @@
 }
 
 .main-header{
+  width: 100%;
   display: flex;
   position: fixed;
   z-index: 2;
   align-items: center;
   background-color: #fff;
+  background: url("./img/Mystic.jpg") center;
+  background-size: cover;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
 }
 
 .header {

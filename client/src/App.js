@@ -17,9 +17,12 @@ import AddBoard from './components/Board/AddBoard';
 import MyBoard from './components/Board/MyBoard';
 import Map from './components/Map/Map';
 import { locations } from './components/Map/Locates';
+import { Geojson } from './components/Map/Geojson';
 import Infomation from './components/Map/Infomation';
 import { useState } from 'react';
 import MainPage from './components/Main/MainPage';
+// import Sonik from './components/Sonik/Sonik';
+// import Question from './components/Question/Question';
 
 function App() {
   const [place, setPlace] = useState("기본")
@@ -68,13 +71,20 @@ function App() {
                   <MyBoard></MyBoard>
             </Route>
 
+            {/* <Route path="/sonik">
+                  <Sonik></Sonik>
+            </Route>
+            <Route path="/question">
+                  <Question></Question>
+            </Route> */}
+
             <Route path="/map">
               <Row>
                 <Col>
                   <Infomation place={place}></Infomation>
                 </Col>
                 <Col>
-                  <Map location={locations} place={place} setPlace={setPlace}></Map>
+                  <Map location={locations}  geojson={Geojson} place={place} setPlace={setPlace}></Map>
                 </Col>
                 <Col>
                   1of1
