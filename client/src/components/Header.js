@@ -1,74 +1,89 @@
 import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import s from '../css/Header.module.css'
+import State from './State/State';
+
+import s from "../css/Header.module.css";
+
+
 //상단 내비게이션
 const Header = () => {
     
     return (
-        <div className={s.Header}>
-            <nav className={s.nav}>
-                <a href='#' className={s.nav_logo}>Let's Be CEO</a>
 
-                <div className={s.nav_menu}>
-                    <ul className={s.nav_list}>
-                        <li className={s.nav_item}>
-                            <a href='#' className={s.nav_link}>상권분석</a>
-                        </li>
-                    </ul>
-                    <ul className={s.nav_list}>
-                        <li className={s.nav_item}>
-                            <a href='#' className={s.nav_link}>손익분기점</a>
-                        </li>
-                    </ul>
-                    <ul className={s.nav_list}>
-                        <li className={s.nav_item}>
-                            <a href='#' className={s.nav_link}>게시판</a>
-                        </li>
-                    </ul>
-                    <ul className={s.nav_list}>
-                        <li className={s.nav_item}>
-                            <a href='#' className={s.nav_link}>CONTACT</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+        <div className={s.navbar}>
+            <div className={s.navbar__logo}>
+                <Link to ='/' className={s.link__logo}>
+                    Logo
+                </Link>
+            </div>
 
+            <ul className={s.navbar__menu}>
+                <li>
+                    <Link to='/map' className={s.link__menu}>
+                        상권분석
+                    </Link>
+                </li>
+                <li>
+                    <Link to='/sonik' className={s.link__menu}>
+                        손익분기
+                    </Link>
+                </li>
+                <li>
+                    <Link to='/board' className={s.link__menu}>
+                        게시판
+                    </Link>
+                </li>
+                <li>
+                    <Link to='/question' className={s.link__menu}>
+                        문의사항
+                    </Link>
+                </li>
+            </ul>
 
-
-
-
-
-
-
-
-
-
-
-
-            {/* <Nav fill variant="tabs" defaultActiveKey="/" className='nav'>         
-                <Nav.Item>
-                    <Nav.Link href="/">LOGO</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link href="/map">상권분석</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link href="/">손익분기점</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link href="/board">게시판</Nav.Link>
-                </Nav.Item> */}
-                {/* <Nav.Item>
-                    <Nav.Link eventKey="home">게시판</Nav.Link>
-                </Nav.Item> */}
-                {/* <Nav.Item>
-                    <Nav.Link eventKey="disabled" disabled>
-                        Disabled
-                    </Nav.Link>
-                </Nav.Item> */}      
-            {/* </Nav>        */}
+            <div className={s.navbar__login}>
+                <State></State>
+            </div>
         </div>
+
+
+
+        /**
+            <div className={s.navbar}>
+                <ul className={s.nav}>
+                    <li>
+                        <Link to ='/'>
+                            Logo
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to ='/map'>
+                            상권분석
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to ='/sonik'>
+                            손익분기
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to ='/board'>
+                            게시판
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to ='/question'>
+                            문의사항
+                        </Link>
+                    </li>
+                    <li>
+                        <div>
+                        <State></State>
+                        </div>
+                    
+                    </li>
+                </ul>
+            </div>
+            */
     );
 };
 export default Header;
-

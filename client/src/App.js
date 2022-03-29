@@ -34,13 +34,12 @@ function App() {
           <div className='header'>
             <Header />
           </div>
-          <div className='state'>
-            <State />
-          </div>
         </div>
           <Switch>
             <Route exact path='/'>
-              <MainPage></MainPage>
+              <div className='main_page'>
+                <MainPage></MainPage>
+              </div>
             </Route>
             <Route path="/login">
               <GoLogin></GoLogin>
