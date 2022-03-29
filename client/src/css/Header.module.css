@@ -17,10 +17,16 @@
 .navbar {
     /* 컨텐츠 사이 공간 */
     /* 아이템 수직 정렬 */
+    position: fixed;
+    width: 100%;
+    z-index: 33;
+    background-color: aliceblue;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.418);
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.096);
+    /* background-color: rgba(255, 255, 255, 0.664); */
     padding: 8px 12px;
 
     text-align: center;
