@@ -6,21 +6,6 @@
   padding: 0;
 }
 
-.main-header{
-  width: 100%;
-  align-items: center;
-  position: fixed;
-  margin: auto;
-  z-index: 33;
-  /* display: flex;
-  position: fixed;
-  z-index: 2;
-  align-items: center;
-  background-color: #fff;
-  background: url("./img/Mystic.jpg") center;
-  background-size: cover;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15); */
-}
 /* 
 ul {
   list-style: none;
@@ -38,14 +23,14 @@ a {
   flex : 1;
 } */
 
-.Head{
+/* .Head{
   margin: auto;
   width: 100%;
   height: 100%;
   border: 5px solid #219dad;
   padding: 10px;
   text-align: center;
-}
+} */
 
 .Foot {
   text-align: center;
@@ -63,6 +48,7 @@ a {
   /* height: 100%; */
   border: 5px solid #219dad;
   padding: 10px;
+
 }
 .loginBtn{
   height: 50px;
