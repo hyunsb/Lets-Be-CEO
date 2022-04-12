@@ -1,3 +1,83 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --header-height: 3rem;
+
+  /* 사용자 값에 따라 변경 가능하도록 */
+
+  /* HSL 색삭표 참고 사이트
+  https://www.w3schools.com/colors/colors_hsl.asp
+  purple 250, green 142, blue 230 pink 340 */
+
+  --hue-color: 250;
+
+  /* -----------------HSL color 변수------------------ */
+  --first-color: hsl(var(--hue-color), 69%, 61%);
+  --first-color-second: hsl(var(--hue-color), 69%, 61%);
+  --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+  --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+  --title-color: hsl(var(--hue-color), 8%, 15%);
+  --text-color: hsl(var(--hue-color), 8%, 45%);
+  --text-color-light: hsl(var(--hue-color), 8%, 65%);
+  --input-color: hsl(var(--hue-color), 70%, 96%);
+  --body-color: hsl(var(--hue-color), 60%, 99%);
+  --container-color: #FFF;
+
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+
+  /* --------------------Font size 변수-------------------- */
+
+  --body-font: 'Poppins', sans-serif;
+
+  --big-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+
+  /* Font weight */
+
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /* --------------------Margin 변수-------------------- */
+
+  --mb-0-25: .25rem;
+  --mb-0-5: .5rem;
+  --mb-0-75: .75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+
+  /* -------------------z-index 변수-------------------- */
+
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+.body {
+  margin: 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  /* background: url("./img/Mystic.jpg") center; */
+
+  background: rgb(41, 27, 27);
+  /* background-size: cover; */
+}
+
 .App {
   text-align: center;
 }
@@ -6,31 +86,29 @@
   padding: 0;
 }
 
-/* 
-ul {
-  list-style: none;
+.main-header {
+  display: flex;
+  z-index: 2;
+  align-items: center;
+  background-color: #fff;
 }
 
-a {
-  text-decoration: none;
-} */
-
-/* .header {
-  flex : 9;
+.header {
+  flex: 9;
 }
 
 .state {
-  flex : 1;
-} */
+  flex: 1;
+}
 
-/* .Head{
+.Head {
   margin: auto;
   width: 100%;
   height: 100%;
   border: 5px solid #219dad;
   padding: 10px;
   text-align: center;
-} */
+}
 
 .Foot {
   text-align: center;
@@ -41,22 +119,105 @@ a {
   padding: 10px;
 }
 
-.Body{
-  text-align: center;
-  width: 100%;
-  height: 600px;
-  /* height: 100%; */
-  border: 5px solid #219dad;
+.Body {
+  /* text-align: center; */
+  /* width: 100%; */
+  /* height: 600px; */
+  height: auto;
+  
+  /* border: 5px solid #219dad; */
   padding: 10px;
-
 }
-.loginBtn{
+
+.loginBtn {
   height: 50px;
 }
-.allBoard{
+
+.allBoard {
   border: 5px solid #219dad;
   width: 500px;
   height: 300px;
   overflow: auto;
+}
+
+
+
+
+.ques {
+  border: 5px solid darkblue;
+}
+
+.prac {
+  font-weight: 1000;
+  color: aqua;
+}
+
+
+
+
+
+.modalItem {
+  margin-top: 10px;
+  margin-left: 10px;
+  z-index: 1050;
+}
+
+/* .ReactModal__Content
+{
+ background-color: #a99e6f;
+ font-family: 'Nanum Pen Script', cursive;
+ width: 500px;
+ height: 300px;
+ overflow: auto;
+ position: absolute;
+} */
+.ReactModal__Content button {
+  background-color: #a99e6f;
+  outline: 0.1;
+  color: #3b2616;
+  font-family: 'Jua', sans-serif;
+  border: 0;
+  outline: 0;
+  margin-left: 250px;
+  width: 100px;
+  border: 1px solid #d1a788;
+  border-radius: .25em;
+}
+
+#map {
+  height: 100vh;
+  width: 100vw;
+  border: 0.1em solid #d1a788;
+  border-radius: 30px;
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+  margin: 0px auto;
+}
+
+.simpleModal {
+  width: 700px;
+
+}
+
+
+.s1 {
+  text-align: center;
+  background-color: burlywood;
+
+
+}
+
+.s2 {
+text-align: center;
+  background-color: rgb(159, 160, 95);
+ 
+}
+
+.s3 {
+  text-align: center;
+
+  background-color: rgb(63, 196, 205);
+  
 }
 
