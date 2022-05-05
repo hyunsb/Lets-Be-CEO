@@ -66,11 +66,11 @@ const FindLogin = () => {
         <div className={s.login__container}>
             <div className={s.login__form}>
                 <div className={s.logo}>
-                    <h1>ID/PW 찾기</h1>
+                    <h1></h1>
                 </div>
 
                 {/* ----------------find userID------------------ */}
-                <h3 className={s.forgotpw__title}>아이디 찾기</h3>                    
+                <h3 className={s.forgotpw__title}>Find ID</h3>                    
                 <div className={s.int__area}>
                     <input type="text" name='mailFindId' value={mailFindId} onChange={handleMailId}></input>
                     <label for="pw">E-mail</label>
@@ -80,7 +80,7 @@ const FindLogin = () => {
                 </div>
 
                 {/* ----------------find password------------------ */}
-                <h3 className={s.forgotpw__title}>비밀번호 찾기</h3>
+                <h3 className={s.forgotpw__title}>Find Password</h3>
                 <div className={s.int__area}>
                     <input type='text' name='idFind' value={idFind} onChange={handleId}></input>
                     <label for="pw">User ID</label>

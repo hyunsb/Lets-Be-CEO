@@ -27,10 +27,13 @@ export default function MainSlider() {
                     <img className={logo.img} src={logo}></img>
                 </div>
                 <div className={styles.slider_items}>
+                    <h1>react-slick Slider Test</h1>
                 </div>
                 <div className={styles.slider_items}>
+                    <h1>react-slick Slider Test</h1>
                 </div>
                 <div className={styles.slider_items}>
+                    <h1>react-slick Slider Test</h1>
                 </div>
             </Slider>
         </div>

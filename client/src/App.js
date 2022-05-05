@@ -16,16 +16,16 @@ import BoardDetail from './components/Board/BoardDetail';
 import AddBoard from './components/Board/AddBoard';
 import MyBoard from './components/Board/MyBoard';
 import Map from './components/Map/Map';
-import { locations } from './components/Map/Locates';
 import { Geojson } from './components/Map/Geojson';
 import Infomation from './components/Map/Infomation';
 import { useState } from 'react';
 import MainPage from './components/Main/MainPage';
-// import Sonik from './components/Sonik/Sonik';
-// import Question from './components/Question/Question';
+import Sonik from './components/Sonik/Sonik';
+import Question from './components/Question/Question';
+import DetailAnalyze from './components/DetailAnalyze/DetailAnalyze';
 
 function App() {
-  const [place, setPlace] = useState("기본")
+  const [place, setPlace] = useState("")
   
   return (
     <div className='body'>
@@ -34,12 +34,13 @@ function App() {
           <div className='header'>
             <Header />
           </div>
+          {/* <div className='state'>
+            <State />
+          </div> */}
         </div>
           <Switch>
             <Route exact path='/'>
-              <div className='main_page'>
-                <MainPage></MainPage>
-              </div>
+              <MainPage></MainPage>
             </Route>
             <Route path="/login">
               <GoLogin></GoLogin>
@@ -70,29 +71,29 @@ function App() {
                   <MyBoard></MyBoard>
             </Route>
 
-            {/* <Route path="/sonik">
+            <Route path="/sonik">
                   <Sonik></Sonik>
             </Route>
             <Route path="/question">
                   <Question></Question>
-            </Route> */}
+            </Route>
 
             <Route path="/map">
-              <Row>
+              {/* <Row>
                 <Col>
                   <Infomation place={place}></Infomation>
                 </Col>
-                <Col>
-                  <Map location={locations}  geojson={Geojson} place={place} setPlace={setPlace}></Map>
-                </Col>
-                <Col>
-                  1of1
-                </Col>
-              </Row>
+                <Col> */}
+                  <Map geojson={Geojson} place={place} setPlace={setPlace}></Map>
+                {/* </Col>
+              </Row> */}
+            </Route>
+            <Route path="/detailAnalyze">
+                  <DetailAnalyze></DetailAnalyze>
             </Route>
 
           </Switch>
-          <Row>
+          {/* <Row>
             <Col>
               1of1
             </Col>
@@ -102,7 +103,7 @@ function App() {
             <Col>
               1of1
             </Col>
-          </Row>
+          </Row> */}
           {/* <div className='Head'>
             <Header></Header>
           </div>
@@ -121,8 +122,7 @@ function App() {
           <div className='Foot'>
             <Footer></Footer>
           </div> */}
-
-
+          <Footer />
       </BrowserRouter>
     </div>
 

@@ -14,13 +14,15 @@ const Comment = (props) => {
        
     }
     return (
+        <>
         <tr>
             <td>{props.id}</td>
             <td>{props.day}</td>
             <td>{props.comment}</td>
-            <td>{props.id===sessionStorage.getItem("user_id")? <Button onClick={deleteComment}>삭제</Button>: ''}</td>
+            
         </tr>
-        
+        {props.id===sessionStorage.getItem("user_id")? <Button onClick={deleteComment}>삭제</Button>: ''}
+        </>
     );
 };
 

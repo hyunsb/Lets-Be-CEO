@@ -101,7 +101,7 @@ const AddLogin = () => {
 
                 <div className={s.int__area}>
                     <input type="password" name='inputPwCh' value={addPwCh} onChange={handleAddPwCh}></input>
-                    <label for="id">PASSWORD</label>
+                    <label for="id">CONFIRM PASSWORD</label>
                 </div>
 
                 <div className={s.int__area}>

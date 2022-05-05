@@ -2,6 +2,7 @@ import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import State from './State/State';
 
+import logo from "../img/headerlogo.png"
 import s from "../css/Header.module.css";
 
 
@@ -13,7 +14,7 @@ const Header = () => {
         <div className={s.navbar}>
             <div className={s.navbar__logo}>
                 <Link to ='/' className={s.link__logo}>
-                    Logo
+                    <img src={logo}/>
                 </Link>
             </div>
 

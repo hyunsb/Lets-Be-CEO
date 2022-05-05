@@ -72,10 +72,8 @@
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
-  /* background: url("./img/Mystic.jpg") center; */
-
-  background: rgb(41, 27, 27);
-  /* background-size: cover; */
+  background: url("./img/Mystic.jpg") center;
+  background-size: cover;
 }
 
 .App {
