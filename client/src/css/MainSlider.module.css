@@ -4,11 +4,11 @@
     margin: auto;
     overflow: hidden;
     align-items: center;
+    padding-bottom: 40px;
 }
 
 .slider_items {
     height: 500px;
     line-height: 500px;
-    background-color: rgba(0, 0, 0, 0.1);
 }
 
