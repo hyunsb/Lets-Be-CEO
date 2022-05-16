@@ -14,10 +14,10 @@ const BoardInfo = (props) => {
     }
     return (
      <tr onClick={selectBoard}>
-         <td>{props.title}</td>
          <td>{props.day}</td>
+         <td>{props.title}</td>
+         {/* <td>{props.content}</td> */}
          <td>{props.writer}</td>
-         <td>{props.content}</td>
      </tr>  
     )
 };

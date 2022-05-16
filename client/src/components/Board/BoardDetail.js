@@ -5,6 +5,7 @@ import Comment from './Comment';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { UilArrowLeft } from '@iconscout/react-unicons'
 
 //-----------------CSS import--------------------//
 import s from '../../css/Board.module.css';
@@ -73,7 +74,13 @@ const BoardDetail = () => {
     
 
     return (
-        <div className={s.board}>
+        <div className={s.detailBoard}>
+            <div>
+            <Link to='/board'>
+                <button className={s.btnBack}><UilArrowLeft/>Back</button>
+            </Link>
+            
+            </div>
             <div className={s.createBoard}>
                 <div className={s.detailTitleContainer}>
                     <div className={s.detailTitle}>
@@ -97,20 +104,20 @@ const BoardDetail = () => {
 
                 <div className={s.detailContent}>
                     <div className={s.titleDiv}>
-                        <span className={s.boardText}>CONTENT</span>
+                        {/* <span className={s.boardText}>CONTENT</span> */}
                     </div>
                     <textarea className={s.textarea} value={location.state.props.content} readOnly></textarea>            
                 </div>    
 
 
-                <div>
+                <div className={s.detailComment}>
                 <span className={s.boardText}>Comment</span>
-                    <Table striped bordered hover size="sm">
+                    <Table striped bordered hover size="sm" className={s.commentTable}>
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>날짜</th>
-                                <th>댓글</th>
+                                <th className={s.commentId}>ID</th>
+                                <th className={s.comment}>댓글</th>
+                                <th className={s.commentDate}>날짜</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -130,14 +137,18 @@ const BoardDetail = () => {
                         </tbody>
                     </Table>
                 </div>
-                <h2>댓글</h2>
-                <input type="text" value={comment} onChange={handleComment}></input>      
-                <br></br>
-                <Button onClick={writeComment}>댓글 달기</Button><br></br><br></br> 
-                {location.state.props.writer === sessionStorage.getItem('user_id') ? <Button onClick={deleteBoard}>게시글 삭제</Button> : ""}
-                {'  '}<Link to='/board'>
-                    <Button>뒤로가기</Button>
-                </Link>
+
+                <div className={s.addComment}>
+                    <div className={s.add}>
+                        <span>댓글달기</span>
+                        <input type="text" value={comment} onChange={handleComment}></input>      
+                        <button className={s.btn} onClick={writeComment}>입력</button>
+                    </div> 
+
+                    <div className={s.commentbtnArea}>
+                        {location.state.props.writer === sessionStorage.getItem('user_id') ? <button className={s.btnDel} onClick={deleteBoard}>게시글 삭제</button> : ""}
+                    </div>
+                </div>
             </div>
         </div>
     );
