@@ -5,19 +5,16 @@ import State from './State/State';
 import logo from "../img/headerlogo.png"
 import s from "../css/Header.module.css";
 
-
 //상단 내비게이션
 const Header = () => {
     
     return (
-
         <div className={s.navbar}>
             <div className={s.navbar__logo}>
                 <Link to ='/' className={s.link__logo}>
                     <img src={logo}/>
                 </Link>
             </div>
-
             <ul className={s.navbar__menu}>
                 <li>
                     <Link to='/map' className={s.link__menu}>
