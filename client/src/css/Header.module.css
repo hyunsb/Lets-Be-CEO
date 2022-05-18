@@ -53,7 +53,8 @@
 }
 
 .navbar__menu > li:hover {
-    box-shadow: 0px 1px .1px rgba(0, 0, 0, 0.144);
+    /* box-shadow: 0px 1px .1px rgba(0, 0, 0, 0.144); */
+    color: #3f73d2;
 }
 
 
