@@ -43,19 +43,43 @@
 .titleTitle {
     padding: 20px;
     padding-top: 40px;
+    margin-bottom: 60px;
+}
+
+.titleContentContainer {
+    justify-content: center;
 }
 
 .titleContent {
-    padding: 0 40px;
+    padding: 0 60px;
     color: #ffffffd2;
     font-family: 'GmarketSansMedium';
+    font-weight: bold;
 
     text-align: center;
 }
 
 .titleContent1 {
-    background-color: #b9b9b9;
+    /* background-color: #b9b9b9; */
+    padding: 0 60px;
+    margin-bottom: 2rem;
+    color: rgba(0, 0, 0, 0.623);
+    font-family: 'GmarketSansMedium';
+    font-weight: bold;
+}
+
+.titleContent1 > p {
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.titleContent2 {
     padding: 0 40px;
+    color: #ffffffd2;
+
+    font-weight: bold;
+
+    text-align: center;
 }
 
 .contentItems {
@@ -71,7 +95,7 @@
 }
 
 .contentItems > p:last-child  {
-    text-align: left;
+    text-align: right;
 }
 
 .sonikContainer {
@@ -110,7 +134,8 @@
 .inputDiv {
     width: 100%;
     padding: 5px 15px;
-    border: 2px solid #3f73d2;
+    /* border: 2px solid #3f73d2; */
+    background-color: #fff;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.171);
 
     text-align: center;
@@ -120,7 +145,7 @@
     /* display: flex;
     justify-content: center; */
     
-    border-radius: 15px;
+    border-radius: 5px;
     align-items: center;
 }
 
@@ -136,6 +161,7 @@
 
     font-size: 18px;
 }
+
 
 .inputs {
     padding-left: 15px;

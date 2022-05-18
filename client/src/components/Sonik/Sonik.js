@@ -8,7 +8,7 @@ import s from '../../css/Sonik.module.css';
 
 import { UilAngleRightB } from '@iconscout/react-unicons'
 import { UilPlusCircle } from '@iconscout/react-unicons'
-
+import { UilCalculator } from '@iconscout/react-unicons'
 
 const Sonik = () => {
 
@@ -137,32 +137,35 @@ const Sonik = () => {
                         <h1 className={s.sonikTitle}>손익분기점 계산</h1>
                     </div>
 
-                    <div className={s.titleContent1}>
-                        <p>손익분기점 계산은 Let's Be Ceo 사용자에게</p>
-                        <p>여러 정보를 입력받아 손익분기점을 기준으로</p>
-                        <p>목표 매출, 목표 유치 고객 수에 대한 정보를 제공합니다.</p>
-                    </div>
-
-                    <div className={s.titleContent}>
-                                               
-                        <div className={s.contentItems}>
-                            <p>고정비용 · 변동비용</p>
-                            <p><UilAngleRightB/></p>
-                            <p>대략적인 손익분기점</p>
+                    <div className={s.titleContentContainer}>
+                        <div className={s.titleContent1}>
+                            <p>손익분기점 계산은 Let's Be Ceo 사용자에게</p>
+                            <p>여러 정보를 입력받아 손익분기점을 기준으로</p>
+                            <p>목표 매출, 목표 유치 고객 수에 대한 정보를 제공합니다.</p>
                         </div>
 
-                        <div className={s.contentItems}>
-                            <p><UilPlusCircle/> 목표 순이익</p>
-                            <p><UilAngleRightB/></p>
-                            <p>목표 매출</p>
-                        </div>
 
-                        <div className={s.contentItems}>
-                            <p><UilPlusCircle/> 메뉴 평균 단가</p>
-                            <p><UilAngleRightB/></p>
-                            <p>일 평균 판매량</p>
-                        </div>
+                        <div className={s.titleContent}>
+                                                
+                            <div className={s.contentItems}>
+                                <p>고정비용 · 변동비용</p>
+                                <p><UilAngleRightB/></p>
+                                <p>대략적인 손익분기점</p>
+                            </div>
 
+                            <div className={s.contentItems}>
+                                <p><UilPlusCircle/> 목표 순이익</p>
+                                <p><UilAngleRightB/></p>
+                                <p>목표 매출</p>
+                            </div>
+
+                            <div className={s.contentItems}>
+                                <p><UilPlusCircle/> 메뉴 평균 단가</p>
+                                <p><UilAngleRightB/></p>
+                                <p>일 평균 판매량</p>
+                            </div>
+
+                        </div>
                     </div>
 
                 </div>
