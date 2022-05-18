@@ -1,3 +1,23 @@
-.SonikContainer {
-    height: 100vh;
+.sonik {
+    height: 100%;
+    min-height: 100vh;
+    padding-top: 50px;
+    padding: 100px;
+}
+
+.sonikContainer {
+    background-color: aquamarine;
+    margin: auto;
+}
+
+.sonikInputPlace {
+    background-color: blue;
+    display: grid;
+
+    row-gap: 1rem;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.sonikInputPlace > div {
+    text-align: center;
 }

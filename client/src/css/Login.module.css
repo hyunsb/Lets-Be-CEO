@@ -11,7 +11,7 @@
     align-items: center;
     height: 100vh;
     background: url("../img/Mystic.jpg") no-repeat center;
-    background-size: cover; 
+    background-size: cover;
 }
 
 .login__form {
@@ -72,14 +72,14 @@
 .btn {
     width: 100%;
     height: 40px;
-    background: #3f73d2;
+    background: rgba(93, 77, 238, 0.581);
     border: none;
     border-radius: 5px;
     color: #fff;
 }
 
 .btn:hover {
-    background: #3f55d2;
+    background: rgba(70, 58, 179, 0.581);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.241);
 }
 
@@ -97,7 +97,7 @@
 
 .link:hover {
     text-decoration: none;
-    color: #3f55d2;
+    color: rgba(93, 77, 238, 0.686);
 }
 
 .link__area {
@@ -124,12 +124,12 @@
     border: none;
     z-index: 1;
 
-    background: #3f73d2;
+    background: rgba(93, 77, 238, 0.581);
     color: #fff;
 }
 
 .sign__btn:hover {
-    background: #3f55d2;
+    background: rgba(70, 58, 179, 0.581);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.241);
 }
 
