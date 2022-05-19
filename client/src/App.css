@@ -169,7 +169,8 @@
  overflow: auto;
  position: absolute;
 } */
-.ReactModal__Content button {
+
+/* .ReactModal__Content button {
   background-color: #a99e6f;
   outline: 0.1;
   color: #3b2616;
@@ -180,7 +181,7 @@
   width: 100px;
   border: 1px solid #d1a788;
   border-radius: .25em;
-}
+} */
 
 #map {
   height: 100vh;

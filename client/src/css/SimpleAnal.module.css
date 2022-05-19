@@ -57,7 +57,7 @@
     margin-left: 15px;
 }
 
-.btnArea > Link > .modalBtn {
+.modalBtn {
     width: 100%;
     height: 40px;
     background: #3f73d2;
@@ -65,13 +65,3 @@
     border-radius: 5px;
     color: #fff;
 }
-
-/* .btnArea > .modalBtn {
-    width: 100%;
-    height: 40px;
-    background: #3f73d2;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-} */
-

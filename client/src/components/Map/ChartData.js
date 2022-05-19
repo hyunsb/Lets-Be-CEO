@@ -184,17 +184,17 @@ const ChartData = (props) => {
       <div className={s.chartDongContainer}>
         <div className={s.dongDataItem}>
           <h1>상주 인구 수</h1>
-          <p>{stay} 명</p>
+          <p> {stay === 0 ? '데이터 없음' : stay+' 명'} </p>
         </div>
 
         <div className={s.dongDataItem}>
           <h1>직장 인구 수</h1>
-          <p>{work} 명</p>
+          <p> {work === 0 ? '데이터 없음' : work+' 명'} </p>
         </div>
 
         <div className={s.dongDataItem}>
           <h1>생활 인구 수</h1>
-          <p>{live} 명</p>
+          <p> {live === 0 ? '데이터 없음' : live+' 명'} </p>
         </div>
         {/* <p className='prac'>상주 인구 수: {stay}</p>
         <p className='prac'>직장 인구 수: {work}</p>
