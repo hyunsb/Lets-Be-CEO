@@ -2,6 +2,7 @@ import { React, useState } from 'react'
 import ResultModal from './Modal/ResultModal'
 import WordInfo_modal from './Modal/WordInfo_modal'
 // import "./SonikCSS/input.css"
+import logo from "../../img/headerlogo.png"
 
 //-----------------CSS import--------------------//
 import s from '../../css/Sonik.module.css';
@@ -171,6 +172,7 @@ const Sonik = () => {
                 </div>
                 
                 <div className={s.sonikInputPlace}>
+                    <img src={logo}></img>
                     <div className={s.inputDiv}>
 
                         <div className={s.labelPlace}>
@@ -197,7 +199,6 @@ const Sonik = () => {
 
 
                     <div className={s.inputDiv}>
-
                         <div className={s.labelPlace}>
                             <label className={s.labels} htmlFor='netprofit'>목표순이익</label>
                         </div>

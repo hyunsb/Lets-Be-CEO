@@ -91,11 +91,11 @@
 }
 
 .contentItems > p:first-child  {
-    text-align: left;
+    text-align: center;
 }
 
 .contentItems > p:last-child  {
-    text-align: right;
+    text-align: center;
 }
 
 .sonikContainer {
