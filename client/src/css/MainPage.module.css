@@ -149,3 +149,9 @@
     line-height: 30px;
     margin: 20px auto;
 }
+
+
+.aboutContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

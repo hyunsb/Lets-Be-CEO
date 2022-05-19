@@ -64,9 +64,7 @@ const Question = () => {
   return (
     <div className={s.Question}>
       <div>문의사항</div>
-
-
-      <div className='container'>
+      <div className={s.questionContainer}>
         <div className='item'>순번</div> <div className='item'>문의내용</div> <div className='item'>작성 날짜</div> <div className='item'>작성자</div>
         
 

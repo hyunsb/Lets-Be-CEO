@@ -36,6 +36,7 @@
 }
 
 .titlePlace {
+    min-width: 431px;
     background-color: #3f73d2;
     border-radius: 5px 0 0 5px;
 }
@@ -108,7 +109,8 @@
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 
     /* padding: 20px; */
-    height: 60vh;
+    min-height: 60vh;
+    /* height: 60vh; */
 
 
     border-radius: 5px 5px 5px 5px;
@@ -117,6 +119,8 @@
 
 .sonikInputPlace {
     /* background-color: rgba(0, 0, 255, 0.144); */
+    min-width: 500px;
+
     display: grid;
     row-gap: 1rem;
     grid-template-rows: repeat(4, 1fr);

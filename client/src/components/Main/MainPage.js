@@ -40,6 +40,15 @@ export default function MainPage() {
                     <p className={styles.main_about_p}>{about}</p>
                 </div>
 
+                <div className={styles.aboutContent}>
+                    <div className={styles.aboutContentItems}>
+                        <p>dasdasdasdasdsadasds</p>
+                    </div>
+                    <div className={styles.aboutContentItems}>
+                        <p>dasdasdasdasdsadasds</p>
+                    </div>
+                </div>
+
                 <ul className={styles.icons}>
                     <li>
                         <div className={styles.iconImg}><img src={iconGps}></img></div>

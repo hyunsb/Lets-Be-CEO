@@ -96,7 +96,7 @@ app.get('/api/comment/:title',(req,res)=>{
       })
 })
 app.post('/api/comment',(req,res)=>{
-    let sql = 'INSERT INTO comment VALUES (null,?,?,?,now())'
+    let sql = 'INSERT INTO comment VALUES (null,?,?,?,now())';
     let id = req.body.id;
     let comment = req.body.comment;
     let title = req.body.title;
@@ -112,5 +112,105 @@ app.delete('/api/comment/:no',(req,res)=>{
         res.send(rows);
       })
 })
+
+app.get('/api/question/:id', (req,res)=>{
+    connection.query('SELECT * FROM question WHERE id = ?', req.params.id, function (error, rows, fields) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.send(rows);
+      })
+})
+
+app.post('/api/question', (req,res)=>{
+    let sql = 'INSERT INTO question VALUES (null,?,?,null,now());'
+    let id = req.body.id;
+    let content = req.body.content;
+    let params = [id, content]
+    console.log(params)
+    connection.query(sql, params, function(error, rows,field){
+        console.log(sql)
+        res.header("Access-Control-Allow-Origin", "*");
+        res.send(rows)
+    })
+})
+
+app.get('/api/answer/', (req,res)=>{
+    connection.query('SELECT * FROM question WHERE id=?', req.query.id,  function (error, rows, fields) {
+        console.log(rows.content)
+        res.header("Access-Control-Allow-Origin", "*");
+        res.send(rows);
+      })
+})
+
+
+app.get('/api/building/shop', (req,res)=>{
+    connection.query('SELECT 행정동_이름, 행정동_총점포수 FROM 간단정보',function (error, rows, fields) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.send(rows);
+      })
+})
+
+app.get('/api/building/:area', (req,res)=>{
+    connection.query('SELECT * FROM 간단정보 WHERE 행정동_이름=?',req.params.area,function (error, rows, fields) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.send(rows);
+      })
+})
+
+app.get('/api/detailPeople/:place', (req,res)=>{
+    connection.query('SELECT * FROM 상세인구 WHERE 행정동_이름=?',req.params.place , function (error, rows, fields) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.send(rows);
+      })
+})
+app.get('/api/detailPeople/:place/:area', (req,res)=>{
+    connection.query('SELECT * FROM 상세인구 WHERE 행정동_이름=? and 상권_코드_명=?',[req.params.place, req.params.area] , function (error, rows, fields) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.send(rows);
+      })
+})
+app.get('/api/detailLocate/:place', (req,res)=>{
+    connection.query('SELECT * FROM 상세지역 WHERE 행정동_이름=?',req.params.place, function (error, rows, fields) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.send(rows);
+      })
+})
+app.get('/api/detailSales/:place', (req,res)=>{
+    connection.query('SELECT * FROM 상세매출 WHERE 행정동_이름=?',req.params.place, function (error, rows, fields) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.send(rows);
+      })
+})
+app.get('/api2/detailSales/:place/:category', (req,res)=>{
+    connection.query('SELECT * FROM 상세매출 WHERE 서비스_업종_코드_명=? AND 행정동_이름=?',[req.params.category,req.params.place],function (error, rows, fields) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.send(rows);
+      })
+})
+app.get('/api3/detailSales/:place/:category/:area', (req,res)=>{
+    connection.query('SELECT * FROM 상세매출 WHERE 서비스_업종_코드_명=? AND 행정동_이름=? AND 상권_코드_명=? ',[req.params.category,req.params.place,req.params.area],function (error, rows, fields) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.send(rows);
+      })
+})
+
+app.get('/api/:place',(req,res)=>{
+    connection.query('SELECT 분식전문점, 양식음식점, 일식음식점, 중식음식점, 치킨전문점, 패스트푸드점, 한식음식점, 호프간이주점 FROM 상세지역 WHERE 행정동_이름=? ',req.params.place,function (error, rows, fields) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.send(rows);
+      })
+})
+
+
+
+app.get('/human/:place/:area/:condition', (req,res)=>{
+    console.log(req.params.place, req.params.area, req.params.condition)
+    const condition = req.params.condition
+    connection.query(`SELECT ${condition} FROM 상세인구 WHERE 행정동_이름=? and 상권_코드_명=?`,[req.params.place, req.params.area] , function (error, rows, fields) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.send(rows);
+      })
+})
+
+
 
 app.listen(port, ()=> console.log("서버 작동"))
