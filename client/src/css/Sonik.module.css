@@ -19,6 +19,7 @@
     padding-top: 50px;
     padding: 100px;
     display: grid;
+    place-items: center;
     align-items: center;
 
     font-family: 'Noto Sans KR', sans-serif;
@@ -109,7 +110,8 @@
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 
     /* padding: 20px; */
-    height: 60vh;
+    min-height: 60vh;
+    max-width: 1200px;
 
 
     border-radius: 5px 5px 5px 5px;

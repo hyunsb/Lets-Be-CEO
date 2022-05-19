@@ -5,6 +5,14 @@ import { useEffect } from 'react';
 import { chartColors } from './chartColors';
 import { useState } from 'react';
 
+import s from '../../css/ChartData.module.css';
+
+import { UilSchedule } from '@iconscout/react-unicons'
+import { UilCalender } from '@iconscout/react-unicons'
+import { UilClockEight } from '@iconscout/react-unicons'
+import { UilTag } from '@iconscout/react-unicons'
+import { UilEstate } from '@iconscout/react-unicons'
+
 Chart.register(ArcElement);
 Chart.register(...registerables);
 
@@ -94,7 +102,7 @@ const ChartData = (props) => {
     datasets: [
       {
         label: '',
-        borderWidth: 5, // 테두리 두께
+        borderWidth: 0, // 테두리 두께
         data: [261, 1531, 1002, 273, 1039, 120, 1578, 2413, 102, 599], // 수치
         fill: true,
         backgroundColor: ['yellow', 'red', 'green', 'blue', 'white', 'black', 'green'] // 각 막대 색
@@ -105,21 +113,21 @@ const ChartData = (props) => {
 
 
   const dayData = {
-    labels: ["월요일 생활인구 수", "화요일 생활인구 수", "수요일 생활인구 수", "목요일 생활인구 수", "금요일 생활인구 수", "토요일 생활인구 수", "일요일 생활인구 수"],
+    labels: ["월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일"],
     datasets: [
       {
-        label: "요일 별",
-        borderWidth: 5, // 테두리 두께
+        label: "요일 별 생활 인구 수",
+        borderWidth: 0, // 테두리 두께
         data: [monday, tuesday, wednesday, thursday, friday, saturday, sunday], // 수치
         fill: true,
         backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
-          'rgba(255, 205, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(201, 203, 207, 0.2)'
+          'rgba(255, 99, 132, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(255, 205, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(201, 203, 207, 1)'
         ],
         borderColor: [
           'rgb(255, 99, 132)',
@@ -134,10 +142,10 @@ const ChartData = (props) => {
     ]
   }
   const timeData = {
-    labels: ["시간대1(00~06) 생활인구 수", "시간대2(06~11) 생활인구 수", "시간대3(11~14) 생활인구 수", "시간대4(14~17) 생활인구 수", "시간대5(17~21) 생활인구 수", "시간대6(21~24) 생활인구 수"],
+    labels: ["00~06시", "06~11시", "11~14시", "14~17시", "17~21시", "21~24시"],
     datasets: [
       {
-        label: "시간대 별",
+        label: "시간대 별 생활 인구 수",
         borderWidth: 1, // 테두리 두께
         data: [time1, time2, time3, time4, time5, time6], // 수치
         fill: true,
@@ -171,70 +179,83 @@ const ChartData = (props) => {
 
 
   return (
-    <div style={{ width: 1500, height: 300 }}>
-      <div>
-        <td>
-          <tr>
-            <h4 className='prac'>요일 별 생활 인구 수</h4>
-            <Bar data={dayData} 
-            width={300}
-            height={300}
-            options={{ indexAxis: 'y', responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
-          </tr>
-          <tr>
-            
-          </tr>
-        </td>
-        <td>
-        
-      </td>
-        <td>
-          <tr>
-            <h4 className='prac'>시간대 별 생활 인구 수</h4>
-            <Bar data={timeData}
-                 width={300}
-                 height={300}
-                options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
-          </tr>
-        </td>
-      
+    <div className={s.chartWrap}>
 
-      </div><br />
-      <td>
-        <tr>
-        <h4 className='prac'>행정동 전체와 해당 지역 매출 비율</h4>
-          <Doughnut
-            data={chartdata}
-            options={{
-              legend: { display: true, position: "right" },
-              datalabels: {
-                display: true,
-                color: "white",
-              },
-              tooltips: {
-                backgroundColor: "#5a6e7f",
-              }
-            }}></Doughnut><br />
-        </tr>
-      </td>
-      <td>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </td>
-      <td>
-        <tr>
-          <h4 className='prac'>행정동 총 점포수</h4>
-          <Bar data={shopData} 
+      <div className={s.chartDongContainer}>
+        <div className={s.dongDataItem}>
+          <h1>상주 인구 수</h1>
+          <p>{stay} 명</p>
+        </div>
+
+        <div className={s.dongDataItem}>
+          <h1>직장 인구 수</h1>
+          <p>{work} 명</p>
+        </div>
+
+        <div className={s.dongDataItem}>
+          <h1>생활 인구 수</h1>
+          <p>{live} 명</p>
+        </div>
+        {/* <p className='prac'>상주 인구 수: {stay}</p>
+        <p className='prac'>직장 인구 수: {work}</p>
+        <p className='prac'>생활 인구 수: {live}</p> */}
+      </div>
+
+      <div className={s.chartPeopleContainer1}>
+        
+        <div className={s.chartPeopleItem}>
+          <div className={s.peopleTitle}>
+            <h4 className='prac'><UilCalender className={s.titleIcons}/> 요일 별 생활 인구 수</h4>
+          </div>
+          <Bar data={dayData} 
           width={300}
           height={300}
-          options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
-        </tr>
-      </td>
+          options={{ indexAxis: 'y', responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
+        </div>
 
+        <div className={s.chartPeopleItem}>
+          <div className={s.peopleTitle}>
+            <h4 className='prac'><UilClockEight className={s.titleIcons}/> 시간대 별 생활 인구 수</h4>
+          </div>
+          <Bar data={timeData}
+            width={300}
+            height={300}
+            options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
+        </div>
+      </div>
 
-      <p className='prac'>상주 인구 수: {stay}</p>
-      <p className='prac'>직장 인구 수: {work}</p>
-      <p className='prac'>생활 인구 수: {live}</p>
+      <div className={s.chartPeopleContainer}>
+        <div className={s.chartItem}>
+          <div className={s.peopleTitle}>
+            <h4 className='prac'><UilTag className={s.titleIcons}/> 행정동 전체와 해당 지역 매출 비율</h4>
+          </div>
+          <div>
+              <Doughnut
+                data={chartdata}
+                options={{
+                  legend: { display: true, position: "right" },
+                  datalabels: {
+                    display: true,
+                    color: "white",
+                  },
+                  tooltips: {
+                    backgroundColor: "#5a6e7f",
+                  }
+                }}></Doughnut>
+            </div>    
+          </div>
+              
+          <div className={s.chartItem}>
+            <div className={s.peopleTitle}>
+              <h4 className='prac'><UilEstate className={s.titleIcons}/> 행정동 총 점포수</h4>
+            </div>
+              <Bar data={shopData} 
+              width={300}
+              height={300}
+              options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
+          </div>
 
+      </div>
 
       {/* <Pie
 
