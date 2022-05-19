@@ -29,10 +29,11 @@ const MyBoard = () => {
             <Table striped bordered hover size="sm">
                 <thead>
                     <tr>
-                        <th className={s.date}>날짜</th>
-                        <th className={s.title}>제목</th>
-                        {/* <th className={s.content}>내용</th> */}
-                        <th className={s.writer}>작성자</th>
+                        <th>#</th>
+                        <th>제목</th>
+                        <th>날짜</th>
+                        <th>작성자</th>
+                        <th>내용</th>
                     </tr>
                 </thead>
                 <tbody>

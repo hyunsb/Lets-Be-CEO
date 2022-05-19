@@ -8,10 +8,6 @@ import QuestionModal from './QuestionModal';
 // import ResultModal from './Modal/ResultModal';
 
 
-//-----------------CSS import--------------------//
-import s from '../../css/Question.module.css';
-
-
 const Question = () => {
   const [questions, setQestions] = useState([]);
   const [content, setContent] = useState("")
@@ -62,9 +58,11 @@ const Question = () => {
   }
   var no=0        //문의사항 순번
   return (
-    <div className={s.Question}>
+    <div>
       <div>문의사항</div>
-      <div className={s.questionContainer}>
+
+
+      <div className='container'>
         <div className='item'>순번</div> <div className='item'>문의내용</div> <div className='item'>작성 날짜</div> <div className='item'>작성자</div>
         
 
