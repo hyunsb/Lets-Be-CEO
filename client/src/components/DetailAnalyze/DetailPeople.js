@@ -398,16 +398,9 @@ const DetailPeople = (props) => {
             </div>
           </div>
 
-
-        <table>
-          <tr>
-            <th></th>
-            <th></th>
-
-          </tr>
-          <tr>
-            <td>
-              상권 내 요일별 직장인구 수
+          <div className={s.peopleDataChartArea}>
+            <div className={s.peopleDataItems}>
+              <h4>상권 내 요일별 직장인구</h4>
               <Doughnut
                 data={dayWorkData}
                 width={300}
@@ -423,78 +416,76 @@ const DetailPeople = (props) => {
                     backgroundColor: "#5a6e7f",
                   }
                 }}></Doughnut>
-            </td>
-            <td>
-              상권 내 요일별 상주인구 수
-              <Doughnut
-                data={dayLiveData}
-                width={300}
-                height={300}
-                options={{
-                  responsive: false,
-                  legend: { display: true, position: "right" },
-                  datalabels: {
-                    display: true,
-                    color: "white",
-                  },
-                  tooltips: {
-                    backgroundColor: "#5a6e7f",
-                  }
-                }}></Doughnut>
-            </td>
-          </tr>
-        </table>
-        <br />
-        <br />
+              </div>
 
-        <div>
-        <select onChange={handleSex}>
-          <option>성별</option>
-          <option>남성</option>
-          <option>여성</option>
-        </select>
-        <select onChange={handleAge}>
-          <option>연령대</option>
-          <option value='10'>10대</option>
-          <option value='20'>20대</option>
-          <option value='30'>30대</option>
-          <option value='40'>40대</option>
-          <option value='50'>50대</option>
-          <option value='60'>60대</option>
-        </select>
-        <select onChange={handleDay}>
-          <option>요일</option>
-          <option>일요일</option>
-          <option>월요일</option>
-          <option>화요일</option>
-          <option>수요일</option>
-          <option>목요일</option>
-          <option>금요일</option>
-          <option>토요일</option>
-        </select>
-        <select onChange={handleTime}>
-          <option>시간대</option>
-          <option value='시간대_1'>00-06</option>
-          <option value='시간대_2'>06-11</option>
-          <option value='시간대_3'>11-14</option>
-          <option value='시간대_4'>14-17</option>
-          <option value='시간대_5'>17-21</option>
-          <option value='시간대_6'> 21-24</option>
-        </select><button onClick={showConditionData}>조회하기</button><br /><br />
+              <div className={s.peopleDataItems}>
+              <h4>상권 내 요일별 직장인구</h4>
+                <Doughnut
+                  data={dayLiveData}
+                  width={300}
+                  height={300}
+                  options={{
+                    responsive: false,
+                    legend: { display: true, position: "right" },
+                    datalabels: {
+                      display: true,
+                      color: "white",
+                    },
+                    tooltips: {
+                      backgroundColor: "#5a6e7f",
+                    }
+                  }}></Doughnut>
+                </div>
 
-        {isGoal ? <div>
-          해당 상권에서 조건에 만족하는 생활 인구 수는<br />
-          {goalData}{' '}입니다.
-        </div> : null}
+                <div className={s.peopleDataItems}>
+                  <div className={s.peopleDataSexArea}>
+                    <select onChange={handleSex}>
+                      <option>성별</option>
+                      <option>남성</option>
+                      <option>여성</option>
+                    </select>
+                    <select onChange={handleAge}>
+                      <option>연령대</option>
+                      <option value='10'>10대</option>
+                      <option value='20'>20대</option>
+                      <option value='30'>30대</option>
+                      <option value='40'>40대</option>
+                      <option value='50'>50대</option>
+                      <option value='60'>60대</option>
+                    </select>
+                    <select onChange={handleDay}>
+                      <option>요일</option>
+                      <option>일요일</option>
+                      <option>월요일</option>
+                      <option>화요일</option>
+                      <option>수요일</option>
+                      <option>목요일</option>
+                      <option>금요일</option>
+                      <option>토요일</option>
+                    </select>
+                    <select onChange={handleTime}>
+                      <option>시간대</option>
+                      <option value='시간대_1'>00-06</option>
+                      <option value='시간대_2'>06-11</option>
+                      <option value='시간대_3'>11-14</option>
+                      <option value='시간대_4'>14-17</option>
+                      <option value='시간대_5'>17-21</option>
+                      <option value='시간대_6'> 21-24</option>
+                    </select><button onClick={showConditionData}>조회하기</button><br /><br />
+                  </div>
+
+                  {isGoal ? <div>
+                    해당 상권에서 조건에 만족하는 생활 인구 수는<br />
+                    {goalData}{' '}입니다.
+                  </div> : null}
 
 
-        가구당 상주 인구 수: {homeNum}<br />
-        실제 이동 인구 수 : ?????<br />
-        일 평균 인구 수 : ?????<br />
-
-        </div>
-      </div> : null}
-
+                  가구당 상주 인구 수: {homeNum}<br />
+                  실제 이동 인구 수 : ?????<br />
+                  일 평균 인구 수 : ?????<br />
+                </div>
+              </div>
+            </div> : null}
     </div>
   )
 }

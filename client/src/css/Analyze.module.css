@@ -378,3 +378,10 @@
     padding-bottom: .5rem;
     border-bottom: 2px solid rgb(189, 189, 189);
 }
+
+.peopleDataSexArea {
+    /* background-color: #3f73d2; */
+    display: flex;
+    justify-content: space-between;
+    gap: 3px;
+}
