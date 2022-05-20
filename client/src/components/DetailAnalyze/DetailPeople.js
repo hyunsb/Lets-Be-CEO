@@ -183,7 +183,7 @@ const DetailPeople = (props) => {
     datasets: [
       {
         label: '',
-        borderWidth: 5, // 테두리 두께
+        borderWidth: 0, // 테두리 두께
         data: areaTotal, // 수치
         fill: true,
         backgroundColor: ['yellow', 'red', 'green', 'blue', 'white', 'black', 'green'], // 각 막대 색
@@ -197,7 +197,7 @@ const DetailPeople = (props) => {
     datasets: [
       {
         label: '',
-        borderWidth: 5, // 테두리 두께
+        borderWidth: 0, // 테두리 두께
         data: [sun, mon, tuse, wed, thur, fri, sat], // 수치
         fill: true,
         backgroundColor: ['yellow', 'red', 'green', 'blue', 'white', 'black', 'green'], // 각 막대 색
@@ -211,7 +211,7 @@ const DetailPeople = (props) => {
     datasets: [
       {
         label: '',
-        borderWidth: 5, // 테두리 두께
+        borderWidth: 0, // 테두리 두께
         data: [age10, age20, age30, age40, age50, age60], // 수치
         fill: true,
         backgroundColor: ['yellow', 'red', 'green', 'blue', 'white', 'black', 'green'], // 각 막대 색
@@ -225,7 +225,7 @@ const DetailPeople = (props) => {
     datasets: [
       {
         label: '',
-        borderWidth: 5, // 테두리 두께
+        borderWidth: 0, // 테두리 두께
         data: [time0, time6, time11, time14, time17, time21], // 수치
         fill: true,
         backgroundColor: ['yellow', 'red', 'green', 'blue', 'white', 'black', 'green'], // 각 막대 색,
@@ -328,47 +328,75 @@ const DetailPeople = (props) => {
 
   return (
     <div>
+      <div className={s.btnArea} onClick={analyze}>
+        <h1>분석하기</h1>
+      </div>
 
-      <button onClick={analyze}>분석하기</button>
-      {show ? <div style={{ width: 1500, height: 300 }}>
-        상권 별 총 생활인구 수 비율
-        <Bar data={totalData}
-          width={1000}
-          height={300}
-          options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
-        상권 별 가구원 수
-        <Bar data={homeData}
-          width={1000}
-          height={300}
-          options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
-        상권을 선택해주세요:{' '}<select onChange={showData}>
-          <option>상권선택</option>
-          {areaName.map((v) => {
-            return <option>{v}</option>
-          })}
-        </select> <br />
-        <button onClick={areaChoice}>상권 선택</button>
+      {show ? 
+        <div className={s.analyzeContentConainer}>
+          <div className={s.contentSectorsSquare}>
+            <div className={s.sectorsItem}>
+              <div className={s.setorsItemTitle}>
+                <h4>상권 별 총 생활인구 수</h4>
+              </div>
+              <Bar data={totalData}
+                width={450}
+                height={450}
+                options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
+            </div>
+            
+            <div className={s.sectorsItem}>
+              <div className={s.setorsItemTitle}>
+                <h4>상권 별 가구원 수</h4>
+              </div>
+            <Bar data={homeData}
+              width={450}
+              height={450}
+              options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
+            </div>
+          </div>
 
+          <div className={s.selectArea}>
+            <p>상권을 선택해주세요:</p>
+            <select className={s.selectItem} 
+              onChange={showData}>
+              <option>상권선택</option>
+              {areaName.map((v) => {
+                return <option>{v}</option>
+              })}
+              </select> <br />
+              <button onClick={areaChoice}>상권 선택</button>
+          </div>
       </div> : null}
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-      {showArea ? <div>
-        상권 내 요일 별 생활인구 수
-        <Bar data={dayData}
-          width={1000}
-          height={300}
-          options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
 
-        상권 내 연령 별 생활인구 수
-        <Bar data={ageData}
-          width={1000}
-          height={300}
-          options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
 
-        상권 내 시간대 별 생활인구 수
-        <Bar data={timeData}
-          width={1000}
-          height={300}
-          options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
+      {showArea ? 
+        <div className={s.peopleDataContainer}>
+          <div className={s.peopleDataChartArea}>
+            <div className={s.peopleDataItems}>
+              <h4>상권 내 요일 별 생활인구 수</h4>
+              <Bar data={dayData}
+                width={300}
+                height={300}
+                options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
+            </div>
+
+            <div className={s.peopleDataItems}>
+              <h4>상권 내 연령 별 생활인구 수</h4>
+              <Bar data={ageData}
+                width={300}
+                height={300}
+                options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
+            </div>
+
+            <div className={s.peopleDataItems}>
+              <h4>상권 내 시간대 별 생활인구 수</h4>
+              <Bar data={timeData}
+                width={300}
+                height={300}
+                options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
+            </div>
+          </div>
 
 
         <table>
@@ -419,6 +447,7 @@ const DetailPeople = (props) => {
         <br />
         <br />
 
+        <div>
         <select onChange={handleSex}>
           <option>성별</option>
           <option>남성</option>
@@ -463,7 +492,7 @@ const DetailPeople = (props) => {
         실제 이동 인구 수 : ?????<br />
         일 평균 인구 수 : ?????<br />
 
-
+        </div>
       </div> : null}
 
     </div>
