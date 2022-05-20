@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: lighter;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.analyze {
+    height: 100%;
+    /* min-height: 100vh; */
+    background-color: rgb(231, 231, 231);
+    /* padding: 100px;
+    padding-top: 0; */
+}
+
+.analyzeWrap {
+    background-color: rgb(231, 231, 231);
+    min-width: 900px;
+}
+
+
+/* ============================Title=========================== */
+/* =====================상권상세분석 : OO동 =================== */
+.analyzeSelect {
+    display: flex;
+    justify-content: center;
+
+    background-color: #3f73d2ee;
+    text-align: center;
+    color: #fff;
+
+    padding: .5rem;
+    padding-top: 1.5rem;
+}
+
+.analyzeSelect > h1:first-child {
+    color: rgba(255, 255, 255, 0.699);
+    font-size: 28px;
+    font-family: 'GmarketSansMedium';
+    margin-left: 15px;
+
+    margin-top: 15px;
+}
+
+.analyzeSelect > h1 {
+    color: rgb(255, 255, 255);
+    font-family: 'yg-jalnan';
+    margin-left: 15px;
+}
+
+/* ============================ Nav Bar =========================== */
+
+.navbarArea {
+    background-color: #3f73d27e;
+    min-width: 900px;
+    margin-bottom: 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.418);
+}
+
+.navbarMenu {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+
+    margin-bottom: 0;
+}
+
+.navbarMenuItems {
+    padding: 10px;
+}
+
+.navbarMenuItems:hover{
+    color: #3f73d2;
+    font-family: GmarketSansMedium;
+}
+
+.navbarMenuItems > h1 {
+    font-size: 20px;
+}
+
+/* ============================ Content =========================== */
+
+/* 스크롤바 hide */
+.AnalyzeContainer{ -ms-overflow-style: none; } 
+.AnalyzeContainer::-webkit-scrollbar{ display:none; }
+.AnalyzeContainer {
+    /* background-color: #3f73d2; */
+    height: 81vh;
+    overflow: auto;
+    padding: 1rem;
+
+    text-align: center;
+}
+
+.analyzeContentConainer {
+    /* background-color: #3f73d26e; */
+
+}
+
+.contentSectors {
+    /* background-color: rgb(231, 231, 231); */
+
+    background-color: #fff;
+    border-radius: 15px;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+}
+
+.sectorsItem {
+    /* background-color: #3f73d2; */
+    /* display: grid;
+    grid-template-rows: .1fr 1fr;
+    justify-content: center; */
+
+    background-color: #fff;
+    /* width: 600px; */
+    margin: auto;
+}

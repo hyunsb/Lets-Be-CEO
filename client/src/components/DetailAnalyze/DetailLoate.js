@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { Bar, Doughnut, Pie } from 'react-chartjs-2'
 import { Chart, ArcElement, registerables } from 'chart.js'
 
+import s from "../../css/Analyze.module.css";
+
 Chart.register(ArcElement);
 Chart.register(...registerables);
 
@@ -82,8 +84,8 @@ const DetailLoate = (props) => {
         datasets: [
             {
                 label: '',
-                borderWidth: 5, // 테두리 두께
-                data: facility, // 수치
+                borderWidth: 0, // 테두리 두께
+                data: facility, // 수치 categoryNo
                 fill: true,
                 backgroundColor: ['yellow', 'red', 'green', 'blue', 'white', 'black', 'green'], // 각 막대 색
                 barPercentage: 0.8,
@@ -95,8 +97,8 @@ const DetailLoate = (props) => {
         datasets: [
             {
                 label: '',
-                borderWidth: 5, // 테두리 두께
-                data: categoryNo, // 수치
+                borderWidth: 0, // 테두리 두께
+                data: categoryNo, // 수치facility
                 fill: true,
                 backgroundColor: ['yellow', 'red', 'green', 'blue', 'white', 'black', 'green'], // 각 막대 색
                 barPercentage: 0.8,
@@ -156,20 +158,25 @@ const DetailLoate = (props) => {
     }
     return (
         <div>
-            <br />
             <button onClick={analyze}>분석하기</button><br /><br />
             {show ?
-                <div style={{ width: 1500, height: 300 }}>
-                    집객 시설
-                    <Bar data={facilityData}
-                        width={1000}
-                        height={300}
-                        options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
-                    업종 개수
-                    <Bar data={categoryData}
-                        width={1000}
-                        height={300}
-                        options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
+                <div className={s.analyzeContentConainer}>
+                    <div className={s.contentSectors}>
+                        <div className={s.sectorsItem}>
+                            <h1>집객 시설</h1>
+                            <Bar data={facilityData}
+                                width={500}
+                                height={500}
+                                options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
+                        </div>
+                        <div className={s.sectorsItem}>
+                            <h1>업종 개수</h1>
+                            <Bar data={categoryData}
+                                width={500}
+                                height={500}
+                                options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
+                        </div>
+                    </div>
 
                     상권을 선택해주세요:{' '}<select onChange={showData}>
                         <option>상권선택</option>
@@ -180,7 +187,6 @@ const DetailLoate = (props) => {
                     <button onClick={areaChoice}>상권 선택</button>
                     {/* <Pie></Pie> */}
                 </div> : null}
-                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
             {showArea ? <div>
                 <Doughnut
                     data={apartData}

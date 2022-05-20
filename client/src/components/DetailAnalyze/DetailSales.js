@@ -3,6 +3,8 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import { Bar, Doughnut, Pie } from 'react-chartjs-2'
 
+import s from "../../css/Analyze.module.css";
+
 const DetailSales = (props) => {
   const [bestSales, setBestSales] = useState(0) //매출 가장 높은상권
   const [bestArea, setBestArea] = useState() //매출가장 높은 상권
@@ -241,8 +243,7 @@ const DetailSales = (props) => {
   }
   return (
     <div>
-      <br />
-      <button onClick={analyze}>분석하기</button><br /><br />
+      <button onClick={analyze}>분석하기</button>
       {show ? <div style={{ width: 1500, height: 300 }}>
 
         분기당 매출 금액(업종별 상권 분기 매출 비교)
@@ -260,7 +261,7 @@ const DetailSales = (props) => {
                 }
               ]
             }
-          }}></Bar><br />
+          }}></Bar>
         <p>분기당 매출 금액이 가장 많은 상권은 {bestArea}이고 금액은 {bestSales}원입니다.</p>
 
         상권을 선택해주세요:{' '}<select onChange={showData}>

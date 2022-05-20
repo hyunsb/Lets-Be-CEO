@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Bar, Doughnut, Pie } from 'react-chartjs-2'
 import axios from 'axios';
 
-
+import s from "../../css/Analyze.module.css";
 
 const DetailPeople = (props) => {
   const [areaName, setAreaName] = useState() //상권 이름

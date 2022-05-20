@@ -74,6 +74,8 @@
   color: var(--text-color);
   background: url("./img/Mystic.jpg") center;
   background-size: cover;
+
+  min-width: 900px;
 }
 
 .App {
