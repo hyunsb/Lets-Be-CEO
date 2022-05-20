@@ -186,13 +186,15 @@ const DetailLoate = (props) => {
                     </div>
 
                     <div className={s.selectArea}>
-                        상권을 선택해주세요:{' '}<select onChange={showData}>
+                        <p>상권을 선택해주세요:</p>
+                        <select className={s.selectItem}
+                            onChange={showData}>
                             <option>상권선택</option>
                             {areaName.map((v) => {
                                 return <option>{v}</option>
                             })}
                         </select> <br />
-                        <button onClick={areaChoice}>상권 선택</button>
+                        <button onClick={areaChoice}>분석하기</button>
                         {/* <Pie></Pie> */}
                     </div>
                 </div> : null}
@@ -223,18 +225,18 @@ const DetailLoate = (props) => {
                         </div>
                         <div className={s.textArea}>
                             <div className={s.textAreaItems}>
-                                <p>아파트 평균 싯가</p>
-                                <p>{averApart}원</p>
+                                <h1>아파트 평균 싯가</h1>
+                                <p>{averApart} 원</p>
                             </div>
 
                             <div className={s.textAreaItems}>
-                                <p>버스 정거장 수</p>
-                                <p>{bus}개</p>
+                                <h1>버스 정거장 수</h1>
+                                <p>{bus} 개</p>
                             </div>
 
                             <div className={s.textAreaItems}>
-                                <p>지하철 정거장 수</p>
-                                <p>{train}개</p>
+                                <h1>지하철 정거장 수</h1>
+                                <p>{train} 개</p>
                             </div>
                         </div>
                     </div>

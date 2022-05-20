@@ -164,51 +164,70 @@ const DetailAnalyze = () => {
           : null}
           {showDetailSale ?
             <div className={s.AnalyzeContainer}>
-              <h1>매출 분석하기</h1>
-              <div >
-                업종을 선택해주세요: {'   '}
-                <select onChange={showData}>
-                  <option>업종 선택</option>
-                  <option>분식전문점</option>
-                  <option>양식음식점</option>
-                  <option>일식음식점</option>
-                  <option>중식음식점</option>
-                  <option>치킨전문점</option>
-                  <option>패스트푸드점</option>
-                  <option>한식음식점</option>
-                  <option>호프-간이주점</option>
+              <div className={s.analyzeSelectArea}>
+                <div className={s.LocateSelectArea}>
+                  <div className={s.LocateSelectAreaTitle}>
+                    <h1>매출</h1>
+                    <h1>분석</h1>
+                  </div>
+                  <div className={s.LocateSelectAreaContent}>
+                    <p>업종을</p>
+                    <p>선택해주세요</p>
+                  </div>
+                  <select className={s.selectItem} onChange={showData}>
+                    <option>업종 선택</option>
+                    <option>분식전문점</option>
+                    <option>양식음식점</option>
+                    <option>일식음식점</option>
+                    <option>중식음식점</option>
+                    <option>치킨전문점</option>
+                    <option>패스트푸드점</option>
+                    <option>한식음식점</option>
+                    <option>호프-간이주점</option>
                 </select>
-                <DetailSales deSales={deSales} place={place} category={category}></DetailSales>
               </div>
+              <DetailSales deSales={deSales} place={place} category={category}></DetailSales>
             </div>
+          </div>
             : null}
           {showDetailLocate ?
             <div className={s.AnalyzeContainer}>
-              <h1>지역 분석하기</h1>
-              <div>
-                업종을 선택해주세요: {'   '}
-                <select onChange={showData}>
-                  <option>업종 선택</option>
-                  <option>분식전문점</option>
-                  <option>양식음식점</option>
-                  <option>일식음식점</option>
-                  <option>중식음식점</option>
-                  <option>치킨전문점</option>
-                  <option>패스트푸드점</option>
-                  <option>한식음식점</option>
-                  <option>호프-간이주점</option>
-                </select><br />
+              <div className={s.analyzeSelectArea}>
+                <div className={s.LocateSelectArea}>
+                  <div className={s.LocateSelectAreaTitle}>
+                    <h1>지역</h1>
+                    <h1>분석</h1>
+                  </div>
+                  <div className={s.LocateSelectAreaContent}>
+                    <p>업종을</p>
+                    <p>선택해주세요</p>
+                  </div>
+                  <select className={s.selectItem} onChange={showData}>
+                    <option>업종 선택</option>
+                    <option>분식전문점</option>
+                    <option>양식음식점</option>
+                    <option>일식음식점</option>
+                    <option>중식음식점</option>
+                    <option>치킨전문점</option>
+                    <option>패스트푸드점</option>
+                    <option>한식음식점</option>
+                    <option>호프-간이주점</option>
+                  </select>
+                </div>
                 <DetailLoate dish={dish} place={place} category={category} deLocate={deLocate}></DetailLoate>
               </div>
             </div>
             : null}
           {showDetailPeople ?
             <div className={s.AnalyzeContainer}>
-              <div>
-                <h1>인구 분석하기</h1>
-                <div>
-                  <DetailPeople dePeople={dePeople} place={place} category={category} ></DetailPeople>
+              <div className={s.analyzeSelectArea}>
+                <div className={s.LocateSelectArea}>
+                  <div className={s.LocateSelectAreaTitle}>
+                    <h1>인구</h1>
+                    <h1>분석</h1>
+                  </div>
                 </div>
+                <DetailPeople dePeople={dePeople} place={place} category={category} ></DetailPeople>
               </div>
             </div>
             : null}
