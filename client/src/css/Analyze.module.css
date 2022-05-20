@@ -23,6 +23,13 @@
 
 .analyzeWrap {
     min-width: 900px;
+    background-color: #fff;
+}
+
+.fixed {
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
 }
 
 
@@ -95,10 +102,10 @@
 .AnalyzeContainer {
     /* background-color: #3f73d2; */
 
-    /* min-height: 100vh; */
-    height: 81vh;
-    overflow: auto;
+    min-height: 100vh;
     padding: 1rem;
+
+    padding-top: 10rem;
     padding-bottom: 10rem;
 
     max-width: 1080px;
@@ -110,7 +117,7 @@
 
 .btnArea {
     width: 100%;
-    background-color: rgb(231, 231, 231);
+    background-color: rgb(241, 241, 241);
     padding : .5rem 0;
     padding-top: 1rem;
     border-radius: 15px;
@@ -124,34 +131,16 @@
     color: #3f73d2;
 }
 
-
-/* .btnArea > button {
-    border: none;
-    outline: none;
-    background-color: #3f73d200;
-} */
-
-.analyzeContentConainer {
-    /* background-color: #3f73d26e; */
-
-}
-
 .contentSectorsSquare {
-    /* background-color: rgb(231, 231, 231); */
     border-radius: 15px;
     
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 1rem;
-    /* justify-content: center; */
 }
 
 .sectorsItem {
-    /* background-color: #3f73d2; */
-    /* display: grid;
-    grid-template-rows: .1fr 1fr;
-    justify-content: center; */
-    background-color: rgb(231, 231, 231);
+    background-color: rgb(241, 241, 241);
     width: 100%;
 
     padding: 1rem;
@@ -160,19 +149,56 @@
     margin: auto;
 }
 
-.setorsItemTitle {
-
-}
-
 .setorsItemTitle > h4{
     color: rgb(94, 94, 94);
-    text-align: left;
+    text-align: center;
     font-family: 'GmarketSansMedium';
     font-weight: bold;
     font-size: 30px;
     
     padding : .5rem 1rem;
-    /* margin-bottom: 1rem; */
+    margin-bottom: 2rem;
     /* padding-bottom: 10px; */
-    /* border-bottom: 1px solid rgb(129, 129, 129); */
+    border-bottom: 2px solid rgb(189, 189, 189);
+}
+
+.selectArea {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 1rem;
+
+    width: 100%;
+    background-color: rgb(241, 241, 241);
+    padding : .5rem 0;
+    padding-top: 1rem;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+}
+
+.LoateStreetContent {
+    background-color: rgb(241, 241, 241);
+    border-radius: 15px;
+    padding: 1rem 2rem 2rem 2rem;
+}
+
+.streetContent {
+    display: grid;
+    justify-items: center;
+
+    grid-template-columns: 1fr 1fr;
+}
+
+.textArea {
+    display: grid;
+    
+    row-gap: 1rem;
+    /* align-items: center; */
+    padding: 3rem;
+    width: 100%;
+}
+
+.textAreaItems {
+    background-color: #3f73d263;
+    border-radius: 10px;
 }

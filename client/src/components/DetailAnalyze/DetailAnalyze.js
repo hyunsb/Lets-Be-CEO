@@ -92,26 +92,28 @@ const DetailAnalyze = () => {
 
       <div className={s.analyze}>
         <div className={s.analyzeWrap}>
-          <div className={s.analyzeSelect}>
-            <h1>상권 상세 분석 : </h1>
-            <h1>{place}</h1>
-          </div>
+          <div className={s.fixed}>
+            <div className={s.analyzeSelect}>
+              <h1>상권 상세 분석 : </h1>
+              <h1>{place}</h1>
+            </div>
 
-          <div className={s.navbarArea}>
-            <ul className={s.navbarMenu}>
-              <li className={s.navbarMenuItems} onClick={clickSummary}> 
-                <h1>분석 설명서</h1>     
-              </li>
-                <li className={s.navbarMenuItems} onClick={clickLocate}>
-                  <h1>상세지역</h1>
+            <div className={s.navbarArea}>
+              <ul className={s.navbarMenu}>
+                <li className={s.navbarMenuItems} onClick={clickSummary}> 
+                  <h1>분석 설명서</h1>     
                 </li>
-                <li className={s.navbarMenuItems} onClick={clickPeople}>
-                  <h1>상세인구</h1>
-                </li>
-                <li className={s.navbarMenuItems} onClick={clickSale}>
-                  <h1>상세매출</h1>
-                </li>
-            </ul>
+                  <li className={s.navbarMenuItems} onClick={clickLocate}>
+                    <h1>상세지역</h1>
+                  </li>
+                  <li className={s.navbarMenuItems} onClick={clickPeople}>
+                    <h1>상세인구</h1>
+                  </li>
+                  <li className={s.navbarMenuItems} onClick={clickSale}>
+                    <h1>상세매출</h1>
+                  </li>
+              </ul>
+            </div>
           </div>
 
           {showDetailSummary ? 

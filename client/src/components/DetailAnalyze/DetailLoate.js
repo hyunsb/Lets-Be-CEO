@@ -185,35 +185,60 @@ const DetailLoate = (props) => {
                         </div>
                     </div>
 
-                    상권을 선택해주세요:{' '}<select onChange={showData}>
-                        <option>상권선택</option>
-                        {areaName.map((v) => {
-                            return <option>{v}</option>
-                        })}
-                    </select> <br />
-                    <button onClick={areaChoice}>상권 선택</button>
-                    {/* <Pie></Pie> */}
+                    <div className={s.selectArea}>
+                        상권을 선택해주세요:{' '}<select onChange={showData}>
+                            <option>상권선택</option>
+                            {areaName.map((v) => {
+                                return <option>{v}</option>
+                            })}
+                        </select> <br />
+                        <button onClick={areaChoice}>상권 선택</button>
+                        {/* <Pie></Pie> */}
+                    </div>
                 </div> : null}
-            {showArea ? <div>
-                <Doughnut
-                    data={apartData}
-                    width={300}
-                    height={300}
-                    options={{
-                        responsive: false,
-                        legend: { display: false, position: "right" },
-                        datalabels: {
-                            display: true,
-                            color: "white",
-                        },
-                        tooltips: {
-                            backgroundColor: "#5a6e7f",
-                        }
-                    }}></Doughnut><br />
-                    아파트 평균 싯가: {averApart}원<br />
-                    버스 정거장 수: {bus}개<br />
-                    지하철 정거장 수: {train}개<br />
-            </div> : null}
+            {showArea ? 
+                <div className={s.LoateStreetContent}>
+                    <div className={s.setorsItemTitle}>
+                        <h4>아파트 시가 분석</h4>
+                    </div>
+
+                    <div className={s.streetContent}>
+                        <div>
+                            <Doughnut
+                                data={apartData}
+                                width={400}
+                                height={400}
+                                options={{
+                                    responsive: false,
+                                    legend: { display: false, position: "right" },
+                                    datalabels: {
+                                        display: true,
+                                        color: "white",
+                                    },
+                                    tooltips: {
+                                        backgroundColor: "#5a6e7f",
+                                    }
+                                }}>
+                            </Doughnut>
+                        </div>
+                        <div className={s.textArea}>
+                            <div className={s.textAreaItems}>
+                                <p>아파트 평균 싯가</p>
+                                <p>{averApart}원</p>
+                            </div>
+
+                            <div className={s.textAreaItems}>
+                                <p>버스 정거장 수</p>
+                                <p>{bus}개</p>
+                            </div>
+
+                            <div className={s.textAreaItems}>
+                                <p>지하철 정거장 수</p>
+                                <p>{train}개</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> : null}
 
 
         </div>
