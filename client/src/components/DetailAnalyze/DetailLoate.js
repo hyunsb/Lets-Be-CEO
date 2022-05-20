@@ -158,22 +158,29 @@ const DetailLoate = (props) => {
     }
     return (
         <div>
-            <button onClick={analyze}>분석하기</button><br /><br />
+            <div className={s.btnArea} onClick={analyze}>
+                <h1>분석하기</h1>
+                {/* <button onClick={analyze}>분석하기</button> */}
+            </div>
             {show ?
                 <div className={s.analyzeContentConainer}>
-                    <div className={s.contentSectors}>
+                    <div className={s.contentSectorsSquare}>
                         <div className={s.sectorsItem}>
-                            <h1>집객 시설</h1>
+                            <div className={s.setorsItemTitle}>
+                                <h4>집객 시설</h4>
+                            </div>
                             <Bar data={facilityData}
-                                width={500}
-                                height={500}
+                                width={450}
+                                height={450}
                                 options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
                         </div>
                         <div className={s.sectorsItem}>
-                            <h1>업종 개수</h1>
+                            <div className={s.setorsItemTitle}>
+                                <h4>업종 개수</h4>
+                            </div>
                             <Bar data={categoryData}
-                                width={500}
-                                height={500}
+                                width={450}
+                                height={450}
                                 options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
                         </div>
                     </div>
