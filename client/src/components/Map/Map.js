@@ -59,7 +59,7 @@ const Map = (props) => {
         strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
         strokeStyle: 'dashed', // 선의 스타일입니다
         fillColor: '#fff', // 채우기 색깔입니다
-        fillOpacity: 0.4, // 채우기 불투명도 입니다
+        fillOpacity: 0.6, // 채우기 불투명도 입니다
       })
       polygons.push(polygon);
       handlePolygon(name, polygon)
@@ -85,7 +85,7 @@ const Map = (props) => {
         strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
         strokeStyle: 'dashed', // 선의 스타일입니다
         fillColor: '#fff', // 채우기 색깔입니다
-        fillOpacity: 0.4, // 채우기 불투명도 입니다
+        fillOpacity: 0.6, // 채우기 불투명도 입니다
       })
       polygons.push(polygon);
       handlePolygon(name, polygon)

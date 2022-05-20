@@ -22,7 +22,7 @@
 
     font-family: sans-serif;
 
-    height: 60vh;
+    height: 62vh;
     overflow: auto;
 
     margin-right: 10px;
@@ -193,13 +193,13 @@
 }
 
 .maxData {
-    color: red;
+    color: rgb(255, 86, 86);
     font-weight: bold;
     margin-right: 10px;
 }
 
 .minData {
-    color: blue;
+    color: rgb(89, 89, 255);
     font-weight: bold;
     margin-right: 10px;
 }

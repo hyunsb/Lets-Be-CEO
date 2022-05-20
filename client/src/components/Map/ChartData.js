@@ -144,6 +144,7 @@ const ChartData = (props) => {
       setWork(props.buildingData.행정동_총_직장인구_수)
     }
   }
+
   function simpleAverSale() {
     if (props.buildingData === undefined) {
       console.log("데이터가 존재하지 않습니다. ")
@@ -347,7 +348,7 @@ const ChartData = (props) => {
 
             <div className={s.shopTextArea}>
                 <div className={s.TextAreaItems}>
-                  <p>점포가 가장 많은 지역 : </p>
+                  <p>선택 지역 : </p>
                   <p className={s.maxData}>{props.place}</p>
                 </div>
                 <div className={s.TextAreaItems}>
