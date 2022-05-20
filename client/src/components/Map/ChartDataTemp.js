@@ -1,27 +1,15 @@
 import React from 'react'
-import { Bar, Doughnut, Pie } from 'react-chartjs-2'
+import { Bar, Doughnut, Line } from 'react-chartjs-2'
 import { Chart, ArcElement, registerables } from 'chart.js'
 import { useEffect } from 'react';
 import { chartColors } from './chartColors';
 import { useState } from 'react';
-
-import s from '../../css/ChartData.module.css';
-
-import { UilSchedule } from '@iconscout/react-unicons'
-import { UilCalender } from '@iconscout/react-unicons'
-import { UilClockEight } from '@iconscout/react-unicons'
-import { UilTag } from '@iconscout/react-unicons'
-import { UilEstate } from '@iconscout/react-unicons'
 
 Chart.register(ArcElement);
 Chart.register(...registerables);
 
 
 const ChartData = (props) => {
-
-  // =========================생활인구에 대한 데이터 저장 변수===============================
-
-  // 요일별
   const [monday, setMonday] = useState(0) //월요일 생활인구 수 
   const [tuesday, setTuesday] = useState(0) //화요일 생활인구 수
   const [wednesday, setWednesday] = useState(0) // 수요일 생활인구 수
@@ -32,15 +20,21 @@ const ChartData = (props) => {
 
 
 
+
+
+  ///////////////////추가////////////////////////
   const listDay={"월요일":monday, "화요일":tuesday, "수요일":wednesday, "목요일":thursday, "금요일":friday, "토요일":saturday, "일요일":sunday}
   const [maxDayValue,setMaxDayValue] = useState(1) //가장 많은 시간대 인구 수 
   const [maxDay, setMaxDay] = useState("") //가장 많은 시간대 요일 
   const [minDayValue, setMinDayValue] = useState(1)
   const [minDay, setMinDay] = useState("")
+///////////////////////////////////////////////////////
 
 
 
-  // 시간대 별
+
+
+
   const [time1, setTime1] = useState(0) //시간대 1 생활인구 수 
   const [time2, setTime2] = useState(0) //시간대 2 생활인구 수 
   const [time3, setTime3] = useState(0) //시간대 3 생활인구 수
@@ -48,23 +42,33 @@ const ChartData = (props) => {
   const [time5, setTime5] = useState(0) //시간대 5 생활인구 수
   const [time6, setTime6] = useState(0) //시간대 6 생활인구 수
 
-  const [stay, setStay] = useState(0) //행정동 총 상주인구 수 
-  const [live, setLive] = useState(0) //행정동 총 생활인구 수 
-  const [work, setWork] = useState(0) //행정동 총 직장인구 수 
 
 
-  
-  const listTime={"00~06시":time1, "06~11시":time2, "11~14시":time3, "14~17시":time4, "17~21시":time5, "21~24시":time6}
+
+
+
+
+/////////////////////추가//////////////////////
+  const listTime={"시간대1(00~06)":time1, "시간대2(06~11)":time2, "시간대3(11~14)":time3, "시간대4(14~17)":time4, "시간대5(17~21)":time5, "시간대6(21~24)":time6}
   const [maxTimeValue,setMaxTimeValue] = useState(1) //가장 많은 시간대 인구 수 
   const [maxTime, setMaxTime] = useState("") //가장 많은 시간대 요일 
   const [minTimeValue, setMinTimeValue] = useState(1)
   const [minTime, setMinTime] = useState("")
   const [shop, setShop] = useState("") //행정동 총 점포수
+  ///////////////////////////////////////////////
 
 
+
+
+  const [stay, setStay] = useState(0) //행정동 총 상주인구 수 
+  const [live, setLive] = useState(0) //행정동 총 생활인구 수 
+  const [work, setWork] = useState(0) //행정동 총 직장인구 수 
 
   const [averageSale, setAverageSale] = useState(0) //행정동 분기당 평균매출
   const allSale = 80551349 //전체 행정동 평균매출의 평균 
+
+  
+  
 
 
   useEffect(() => {
@@ -75,10 +79,15 @@ const ChartData = (props) => {
     simplePeopleData()
     simpleAverSale()
 
+    ///////추가////////
     simpleShop()
+  //////////////////
 
   }, [props])
 
+  
+
+  /////////////////추가/////////////////////////////////////
   useEffect(()=>{
     setMaxTimeValue(Math.max(time1,time2,time3,time4,time5,time6))
     setMinTimeValue(Math.min(time1,time2,time3,time4,time5,time6))
@@ -99,6 +108,13 @@ const ChartData = (props) => {
     setMinDay(Object.keys(listDay).find(key=>listDay[key] === minDayValue))
   },[maxTimeValue])
 
+///////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
   function simpleDayData() {
     if (props.buildingData === undefined) {
       console.log("데이터가 존재하지 않습니다. ")
@@ -111,18 +127,9 @@ const ChartData = (props) => {
       setFriday(props.buildingData.금요일_생활인구_수)
       setSaturday(props.buildingData.토요일_생활인구_수)
       setSunday(props.buildingData.일요일_생활인구_수)
+
     }
   }
-
-  function simpleShop() {
-    if (props.buildingData === undefined) {
-      console.log("데이터가 존재하지 않습니다. ")
-    } else {   
-      setShop(props.buildingData.행정동_총점포수)
-    }
-  }
-
-
   function simpletimeData() {
     if (props.buildingData === undefined) {
       console.log("데이터가 존재하지 않습니다.")
@@ -149,8 +156,22 @@ const ChartData = (props) => {
       console.log("데이터가 존재하지 않습니다. ")
     } else {
       setAverageSale(props.buildingData.행정동_분기당_평균매출)
+
     }
   }
+
+
+
+
+  /////////////////추가///////////////////////
+  function simpleShop() {
+    if (props.buildingData === undefined) {
+      console.log("데이터가 존재하지 않습니다. ")
+    } else {   
+      setShop(props.buildingData.행정동_총점포수)
+    }
+  }
+//////////////////////////////////////////////
 
 
   const shopData = {
@@ -158,7 +179,7 @@ const ChartData = (props) => {
     datasets: [
       {
         label: '',
-        borderWidth: 0, // 테두리 두께
+        borderWidth: 5, // 테두리 두께
         data: [261, 1531, 1002, 273, 1039, 120, 1578, 2413, 102, 599], // 수치
         fill: true,
         backgroundColor: ['yellow', 'red', 'green', 'blue', 'white', 'black', 'green'] // 각 막대 색
@@ -169,21 +190,21 @@ const ChartData = (props) => {
 
 
   const dayData = {
-    labels: ["월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일"],
+    labels: ["월요일 생활인구 수", "화요일 생활인구 수", "수요일 생활인구 수", "목요일 생활인구 수", "금요일 생활인구 수", "토요일 생활인구 수", "일요일 생활인구 수"],
     datasets: [
       {
-        label: "요일 별 생활 인구 수",
-        borderWidth: 0, // 테두리 두께
+        label: "요일 별",
+        borderWidth: 5, // 테두리 두께
         data: [monday, tuesday, wednesday, thursday, friday, saturday, sunday], // 수치
         fill: true,
         backgroundColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(255, 159, 64, 1)',
-          'rgba(255, 205, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(201, 203, 207, 1)'
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(255, 205, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(201, 203, 207, 0.2)'
         ],
         borderColor: [
           'rgb(255, 99, 132)',
@@ -198,10 +219,10 @@ const ChartData = (props) => {
     ]
   }
   const timeData = {
-    labels: ["00~06시", "06~11시", "11~14시", "14~17시", "17~21시", "21~24시"],
+    labels: ["시간대1(00~06) 생활인구 수", "시간대2(06~11) 생활인구 수", "시간대3(11~14) 생활인구 수", "시간대4(14~17) 생활인구 수", "시간대5(17~21) 생활인구 수", "시간대6(21~24) 생활인구 수"],
     datasets: [
       {
-        label: "시간대 별 생활 인구 수",
+        label: "시간대 별",
         borderWidth: 1, // 테두리 두께
         data: [time1, time2, time3, time4, time5, time6], // 수치
         fill: true,
@@ -235,130 +256,88 @@ const ChartData = (props) => {
 
 
   return (
-    <div className={s.chartWrap}>
-
-      <div className={s.chartDongContainer}>
-        <div className={s.dongDataItem}>
-          <h1>상주 인구 수</h1>
-          <p> {stay === 0 ? '데이터 없음' : stay+' 명'} </p>
-        </div>
-
-        <div className={s.dongDataItem}>
-          <h1>직장 인구 수</h1>
-          <p> {work === 0 ? '데이터 없음' : work+' 명'} </p>
-        </div>
-
-        <div className={s.dongDataItem}>
-          <h1>생활 인구 수</h1>
-          <p> {live === 0 ? '데이터 없음' : live+' 명'} </p>
-        </div>
-        {/* <p className='prac'>상주 인구 수: {stay}</p>
-        <p className='prac'>직장 인구 수: {work}</p>
-        <p className='prac'>생활 인구 수: {live}</p> */}
-      </div>
-
-      <div className={s.chartPeopleContainer1}>
-        
-        <div className={s.chartPeopleItem}>
-          <div className={s.peopleTitle}>
-            <h4 className='prac'><UilCalender className={s.titleIcons}/> 요일 별 생활 인구 수</h4>
-          </div>
-          
-          <div className={s.chartArea}>
+    <div style={{ width: 1500, height: 300 }}>
+      <div>
+        <td>
+          <tr>
+            <h4 className='prac'>요일 별 생활 인구 수</h4>
             <Bar data={dayData} 
             width={300}
             height={300}
             options={{ indexAxis: 'y', responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
-          </div>
+          </tr>
           
-          <div className={s.peopleTextArea}>
-            <div className={s.TextAreaItems}>
-              <p>생활 인구가 가장 많은 요일 : </p>
-              <p className={s.maxData}>{maxDay}</p>
-              <p>{maxDayValue} 명</p>
-            </div>
-            <div className={s.TextAreaItems}>
-              <p>생활 인구가 가장 적은 요일 : </p>
-              <p className={s.minData}>{minDay}</p>
-              <p>{minDayValue} 명</p>
-            </div>
-          </div>
-        </div>
-
-        <div className={s.chartPeopleItem}>
-          <div className={s.peopleTitle}>
-            <h4 className='prac'><UilClockEight className={s.titleIcons}/> 시간대 별 생활 인구 수</h4>
-          </div>
-
-          <div className={s.chartArea}>
+          <tr>
+          가장 많은 요일 : {maxDay}로 인구수는 {maxDayValue} <br/>
+          가장 적은 요일 : {minDay}로 인구수는 {minDayValue}
+          </tr>
+        </td>
+        <td>
+        
+      </td>
+        <td>
+          <tr>
+            <h4 className='prac'>시간대 별 생활 인구 수</h4>
             <Bar data={timeData}
-              width={300}
-              height={300}
-              options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
-          </div>
+                 width={300}
+                 height={300}
+                options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
+          </tr>
+          <tr>
+            가장 많은 시간대 : {maxTime} 로 인구수는 {maxTimeValue}<br/>
+            가장 적은 시간대 : {minTime} 로 인구수는 {minTimeValue}
+          </tr>
+          <tr>
+          
+          </tr>
+        </td>
+      
 
-          <div className={s.peopleTextArea}>
-            <div className={s.TextAreaItems}>
-              <p>생활 인구가 가장 많은 시간 : </p>
-              <p className={s.maxData}>{maxTime}</p>
-              <p>{maxTimeValue} 명</p>
-            </div>
-            <div className={s.TextAreaItems}>
-              <p>생활 인구가 가장 적은 시간 : </p>
-              <p className={s.minData}>{minTime}</p>
-              <p>{minTimeValue} 명</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      </div><br />
+      <td>
+        <tr>
+        <h4 className='prac'>행정동 전체와 해당 지역 매출 비율</h4>
+          <Doughnut
+            data={chartdata}
+            options={{
+              legend: { display: true, position: "right" },
+              datalabels: {
+                display: true,
+                color: "white",
+              },
+              tooltips: {
+                backgroundColor: "#5a6e7f",
+              }
+            }}></Doughnut><br />
+        </tr>
+        <tr>
+          전체 동 매출의 평균 {allSale} <br/>
+          {props.place}의 매출 {averageSale}
+          
+        </tr>
+      </td>
+      <td>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </td>
+      <td>
+        <tr>
+          <h4 className='prac'>행정동 총 점포수</h4>
+          <Bar data={shopData} 
+          width={300}
+          height={300}
+          options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
+        </tr>
+        <tr>
+          가장 많은 점포수 지역은 역삼동으로 2413 <br/>
+          {props.place}의 점포수는 {shop}
+        </tr>
+      </td>
 
-      <div className={s.chartPeopleContainer}>
-        <div className={s.chartItem}>
-          <div className={s.peopleTitle}>
-            <h4 className='prac'><UilTag className={s.titleIcons}/> 행정동 전체와 해당 지역 매출 비율</h4>
-          </div>
-          <div className={s.chartArea}>
-              <Doughnut
-                data={chartdata}
-                options={{
-                  legend: { display: true, position: "right" },
-                  datalabels: {
-                    display: true,
-                    color: "white",
-                  },
-                  tooltips: {
-                    backgroundColor: "#5a6e7f",
-                  }
-                }}></Doughnut>
-            </div>    
-          </div>
-              
-          <div className={s.chartItem}>
-            <div className={s.peopleTitle}>
-              <h4 className='prac'><UilEstate className={s.titleIcons}/> 행정동 총 점포수</h4>
-            </div>
 
-            <div className={s.chartArea}>
-              <Bar data={shopData} 
-              width={300}
-              height={300}
-              options={{ responsive: false, legend: { display: true, position: "bottom" } }}></Bar><br />
-            </div>
+      <p className='prac'>상주 인구 수: {stay}</p>
+      <p className='prac'>직장 인구 수: {work}</p>
+      <p className='prac'>생활 인구 수: {live}</p>
 
-            <div className={s.shopTextArea}>
-                <div className={s.TextAreaItems}>
-                  <p>점포가 가장 많은 지역 : </p>
-                  <p className={s.maxData}>{props.place}</p>
-                </div>
-                <div className={s.TextAreaItems}>
-                  <p>점포수 : </p>
-                  <p className={s.maxData}>{shop}</p>
-                  <p>개</p>
-                </div>
-            </div>
-          </div>
-
-      </div>
 
       {/* <Pie
 
