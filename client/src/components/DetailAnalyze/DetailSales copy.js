@@ -9,7 +9,6 @@ const DetailSales = (props) => {
   const [bestSales, setBestSales] = useState(0) //매출 가장 높은상권
   const [bestArea, setBestArea] = useState() //매출가장 높은 상권
 
-
   const [area, setArea] = useState() //상권 선택
   const [showAreaData, setShowAreaData] = useState(false) //상권 선택
   const [areaName, setAreaName] = useState() //상권이름
@@ -49,11 +48,8 @@ const DetailSales = (props) => {
   var arr1 = [] //상권코드명 샘플
   var arr2 = [] //분기당 매출 금액 샘플
 
-  // var arr3 = 0 //최고 매출 금액 샘플
-  // var arr4 = "" //최고 매출 상권 샘플
-
-  var maxSale=0
-  var maxArea=""
+  var arr3 = 0 //최고 매출 금액 샘플
+  var arr4 = "" //최고 매출 상권 샘플
 
   useEffect(() => {
     fetch(`http://localhost:5000/api2/detailSales/${props.place}/${props.category}`)
@@ -63,34 +59,19 @@ const DetailSales = (props) => {
         arr2.push(v.분기당_매출_금액)
       }))
   }, [props])
-  // useEffect(() => {
-  //   fetch(`http://localhost:5000/api2/detailSales/${props.place}/${props.category}`)
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       console.log(data)
-  //       for (var i = 0; i < data.length; i++) {
-  //         if (data[i].분기당_매출_금액 > bestSales) {
-  //           arr3 = data[i].분기당_매출_금액
-  //           arr4 = data[i].상권_코드_명
-  //         }
-  //       }
-  //     }
-  //     )
-  // }, [arr2])
-  function bestValue(){
- 
-    // setBestSales(Math.max(...arr2))
-    for(var i=0; i<arr2.length; i++){
-      if(arr2[i] > maxSale){
-        maxSale=arr2[i]
-        maxArea=arr1[i]
-        setBestArea(arr1[i])
-        setBestSales(arr2[i])
+  useEffect(() => {
+    fetch(`http://localhost:5000/api2/detailSales/${props.place}/${props.category}`)
+      .then(res => res.json())
+      .then(data => {
+        for (var i = 0; i < data.length; i++) {
+          if (data[i].분기당_매출_금액 > bestSales) {
+            arr3 = data[i].분기당_매출_금액
+            arr4 = data[i].상권_코드_명
+          }
+        }
       }
-    }
-    console.log(bestSales)
-    return 
-  }
+      )
+  }, [arr2])
 
 
   //분기당 매출 금액
@@ -207,9 +188,8 @@ const DetailSales = (props) => {
     } else {
       setAreaName(arr1)
       setAmount(arr2)
-      // setBestSales(arr3)
-      // setBestArea(arr4)
-      bestValue()
+      setBestSales(arr3)
+      setBestArea(arr4)
       setShow(true)
       setShowAreaData(false)
     }
@@ -228,7 +208,7 @@ const DetailSales = (props) => {
       fetch(`http://localhost:5000/api3/detailSales/${props.place}/${props.category}/${area}`)
         .then(res => res.json())
         .then(data => {
-          
+          console.log(data[0])
           setTime0(data[0].시간대_00_06_매출_금액)
           setTime6(data[0].시간대_06_11_매출_금액)
           setTime11(data[0].시간대_11_14_매출_금액)

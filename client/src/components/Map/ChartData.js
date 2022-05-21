@@ -162,7 +162,8 @@ const ChartData = (props) => {
         borderWidth: 0, // 테두리 두께
         data: [261, 1531, 1002, 273, 1039, 120, 1578, 2413, 102, 599], // 수치
         fill: true,
-        backgroundColor: ['yellow', 'red', 'green', 'blue', 'white', 'black', 'green'] // 각 막대 색
+        backgroundColor: ['#ED42B6', '#D245F7', '#8549E0', '#4745F7', '#3E7FF0', '#4EBEED', '#52F7EA', 
+                          '#56E09D', '#52F765', '#85F04A'] // 각 막대 색
       }
     ]
   }
@@ -220,7 +221,7 @@ const ChartData = (props) => {
       {
         label: "",
         backgroundColor: [
-          "#83ce83",
+          "#F57545",
           "#959595",
           "#f96a5d",
           "#00A6B4",
