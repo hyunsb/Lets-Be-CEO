@@ -19,6 +19,7 @@
     padding: 100px;
 
     display: grid;
+    /* justify-content: center; */
     align-items: center;
 }
 
@@ -51,17 +52,19 @@
     display: grid;
     grid-template-columns: .5fr 3fr 1fr 1fr;
     justify-items: center;
-}
 
-.contentContainer1 > .contentItem :not(:last-child) {
-    border-right: 1px solid #3f73d2;
+    border-radius: 10px;
+
+    background-color: #c7c7c7;
+    margin-bottom: 1rem;
+    padding: .5rem 0;
 }
 
 .contentContainer {
     /* display: grid;
     grid-template-columns: .5fr 3fr 1fr 1fr;
     justify-items: center; */
-    min-height: 50vh;
+    min-height: 40vh;
 }
 
 
