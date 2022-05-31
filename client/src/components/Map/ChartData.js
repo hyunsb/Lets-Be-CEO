@@ -162,8 +162,16 @@ const ChartData = (props) => {
         borderWidth: 0, // 테두리 두께
         data: [261, 1531, 1002, 273, 1039, 120, 1578, 2413, 102, 599], // 수치
         fill: true,
-        backgroundColor: ['#ED42B6', '#D245F7', '#8549E0', '#4745F7', '#3E7FF0', '#4EBEED', '#52F7EA', 
-                          '#56E09D', '#52F765', '#85F04A'] // 각 막대 색
+        backgroundColor: ['#ED42B6', 
+                          '#D245F7', 
+                          '#8549E0', 
+                          '#4745F7', 
+                          '#3E7FF0', 
+                          '#4EBEED', 
+                          '#4DA8BD', 
+                          '#5BC791', 
+                          '#7BDE5B', 
+                          '#D6D24F'] // 각 막대 색
       }
     ]
   }
@@ -184,7 +192,9 @@ const ChartData = (props) => {
           'rgba(255, 205, 86, 1)',
           'rgba(75, 192, 192, 1)',
           'rgba(54, 162, 235, 1)',
+          '#4F4AEB',
           'rgba(153, 102, 255, 1)',
+          '#EB4BD9',
           'rgba(201, 203, 207, 1)'
         ],
         borderColor: [
@@ -221,11 +231,15 @@ const ChartData = (props) => {
       {
         label: "",
         backgroundColor: [
-          "#F57545",
-          "#959595",
-          "#f96a5d",
-          "#00A6B4",
-          "#6800B4",
+          'rgba(255, 99, 132, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(255, 205, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(54, 162, 235, 1)',
+          '#4F4AEB',
+          'rgba(153, 102, 255, 1)',
+          '#EB4BD9',
+          'rgba(201, 203, 207, 1)'
         ],
         data: data,
         cutout: "0%"

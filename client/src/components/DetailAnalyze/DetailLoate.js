@@ -87,7 +87,17 @@ const DetailLoate = (props) => {
                 borderWidth: 0, // 테두리 두께
                 data: facility, // 수치 categoryNo
                 fill: true,
-                backgroundColor: ['yellow', 'red', 'green', 'blue', 'white', 'black', 'green'], // 각 막대 색
+                backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 205, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    '#4F4AEB',
+                    'rgba(153, 102, 255, 1)',
+                    '#EB4BD9',
+                    'rgba(201, 203, 207, 1)'
+                  ],
                 barPercentage: 0.8,
             }
         ]
@@ -100,7 +110,17 @@ const DetailLoate = (props) => {
                 borderWidth: 0, // 테두리 두께
                 data: categoryNo, // 수치facility
                 fill: true,
-                backgroundColor: ['yellow', 'red', 'green', 'blue', 'white', 'black', 'green'], // 각 막대 색
+                backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 205, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    '#4F4AEB',
+                    'rgba(153, 102, 255, 1)',
+                    '#EB4BD9',
+                    'rgba(201, 203, 207, 1)'
+                  ],
                 barPercentage: 0.8,
             }
         ]
@@ -115,14 +135,16 @@ const DetailLoate = (props) => {
             {
                 label: "",
                 backgroundColor: [
-                    "#83ce83",
-                    "#959595",
-                    "#f96a5d",
-                    "#00A6B4",
-                    "#545775",
-                    "#663366",
-                    "#339966",
-                ],
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 205, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    '#4F4AEB',
+                    'rgba(153, 102, 255, 1)',
+                    '#EB4BD9',
+                    'rgba(201, 203, 207, 1)'
+                  ],
                 data: data,
             },
         ],

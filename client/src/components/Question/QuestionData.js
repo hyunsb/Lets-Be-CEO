@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 // import ResultModal from './Modal/ResultModal'
 
+import s from "../../css/Question.module.css";
+
 const QuestionData = (props) => {
     
     function showQuestion(){
@@ -24,11 +26,10 @@ const QuestionData = (props) => {
     }
     return (
         <>
-       
-            <div className='item'>{props.no}</div>
-            <div className='item' onClick={showQuestion} >{props.content}</div>
-            <div className='item'>{props.date}</div>
-            <div className='item'>{props.id}</div>
+            <div className={s.item}><p>{props.no}</p></div>
+            <div className={s.item} onClick={showQuestion} ><p>{props.content}</p></div>
+            <div className={s.item}><p>{props.id}</p></div>
+            <div className={s.item}><p>{props.date}</p></div>
         </>
     )
 }
