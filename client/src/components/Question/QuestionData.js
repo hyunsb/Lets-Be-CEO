@@ -25,12 +25,12 @@ const QuestionData = (props) => {
         
     }
     return (
-        <>
+        <div className={s.itemContainer}>
             <div className={s.item}><p>{props.no}</p></div>
             <div className={s.item} onClick={showQuestion} ><p>{props.content}</p></div>
             <div className={s.item}><p>{props.id}</p></div>
             <div className={s.item}><p>{props.date}</p></div>
-        </>
+        </div>
     )
 }
 

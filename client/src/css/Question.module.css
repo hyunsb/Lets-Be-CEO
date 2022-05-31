@@ -38,6 +38,7 @@
 }
 
 .titleArea > h1 {
+    font-size: 25px;
     font-family: 'yg-jalnan';
     color: #fff;
 }
@@ -57,21 +58,53 @@
 }
 
 .contentContainer {
-    display: grid;
+    /* display: grid;
     grid-template-columns: .5fr 3fr 1fr 1fr;
-    justify-items: center;
-
+    justify-items: center; */
+    min-height: 50vh;
 }
 
 
+
+.itemContainer {
+    display: grid;
+    grid-template-columns: .5fr 3fr 1fr 1fr;
+    justify-items: center;
+}
+
+.contentItem {
+    width: 100%;
+    text-align: center;
+}
+
+.contentItem:not(:first-child) {
+    border-left: 1px solid rgb(167, 167, 167);
+}
+
 .contentItem > p{
-    font-size: 25px;
+    font-size: 20px;
+    margin: 10px 0;
     font-family: GmarketSansMedium;
+}
+
+.item {
+    width: 100%;
+    text-align: center;
+}
+
+.item:not(:first-child) {
+    border-left: 1px solid rgb(167, 167, 167);
 }
 
 .item > p {
     font-size: 16px;
+    margin: 10px 0;
 }
+
+
+
+
+
 
 .submitArea {
     padding: 1rem;
@@ -83,7 +116,7 @@
 
 .submitTitle {
     display: flex;
-    background-color: aliceblue;
+    background-color: #cfcfcf;
     align-items: center;
 
     border-radius: 15px 0 0 15px;
@@ -99,7 +132,7 @@
 .submit {
     outline: none;
     border: none;
-    background-color: aliceblue;
+    background-color: #cfcfcf;
 
     padding-left: 1rem;
 }
