@@ -35,39 +35,8 @@ const SimpleModal = (props) => {
     alignItems : 'center',
     },
    content: {
-      // width : '1080px',
-      // maxwidth: '1080px',
-      // display : 'grid',
-    // height:'720px',
-    // border: '1px solid #fff',
-    // borderRadius: '4px',
-    // bottom: 'auto',
-    
-    // left: '50%',
-    // padding: '2rem',
-    // position: 'fixed',
-    // right: 'auto',
-    // top: '50%',
-    // transform: 'translate(-120%,-50%)',
-    // minWidth: '20rem',
-    // width: '100px',
-    // maxWidth: '1000px',
-
-    
   }
   }
-
-  // function showDetailAnalyze(){
-  //   console.log("Dd")
-  //   history.push({
-  //     pathname:'/detailAnalyze',
-  //     state: {props: props}
-  // })
-  // }
-
-
-
-
 
   return (
     <div>
@@ -88,12 +57,9 @@ const SimpleModal = (props) => {
       <div className={s.btnArea}>
             <Link to ={{
               pathname: '/detailAnalyze',
-              state: {
-                place: props.place
-              }
+              state: { place: props.place}
             }}>
             <button className={s.modalBtn}>상세 분석</button></Link>
-            
             <button className={s.modalBtn} onClick={props.closeModal}>닫기</button>
       </div>
 

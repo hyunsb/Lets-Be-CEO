@@ -4,7 +4,6 @@ import SimpleModal from './SimpleModal'
 
 
 //카카오맵 정보
-
 const Map = (props) => {
 
    const [isShowSimple, setIsShowSimple] = useState(false)
@@ -133,15 +132,6 @@ const Map = (props) => {
         // console.log(name)
         props.setPlace(name)
         showSimpleAnalyze()
-        
-       
-
-
-        // const content = <div>gg</div>
-
-        // infowindow.setContent(content);
-        // infowindow.setPosition(mouseEvent.latLng);
-        // infowindow.setMap(map);
       });
     }
 
@@ -149,10 +139,8 @@ const Map = (props) => {
 
   return (
     <div>
-
       <h1>상권분석</h1>
       {isShowSimple ? <div className='simpleModal'>
-
         <SimpleModal
         place={props.place}
         openModal={openModal}
