@@ -1,7 +1,9 @@
-### 성결대학교 - 전공종합설계
-## 요식업 상권 정보 제공 플랫폼 Let’s Be CEO
+# 요식업 상권 정보 제공 플랫폼 Let’s Be CEO
 
-![img.png](readmeimg/title.png)
+### 전공 종합 설계 경진대회 - 4위 수상
+![image](https://github.com/hyunsb/Lets-Be-CEO/assets/96504592/24975c79-cc86-4c16-bc47-5792d42b37d1)
+
+
 
 “창업에 겁내지 말자!**"**
 
