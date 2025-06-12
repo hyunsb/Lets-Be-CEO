@@ -91,13 +91,6 @@
 
 #### 메인페이지
 
-![img_1.png](readmeimg/img_1.png)
-#### **로그인**
-![img_6.png](readmeimg/img_17.png)
-
-#### **회원 가입**
-![img_7.png](readmeimg/img_18.png)
-
 #### **지역 선택**
 ![img_1.png](readmeimg/img_12.png)
 
